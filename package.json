@@ -1,0 +1,12 @@
+{
+  "name": "landing",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  },
+  "scripts": {
+    "build": "./build.sh",
+    "dev": "node-sass --watch styles/sass -o styles --output-style compressed"
+  }
+}
