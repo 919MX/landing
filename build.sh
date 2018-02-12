@@ -1,1 +1,1 @@
-node-sass styles/sass -o styles --output-style compressed
+node-sass public/styles/sass -o public/styles --output-style compressed
