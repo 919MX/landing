@@ -1,4 +1,4 @@
-# EnSintonía landing page
+# Sintonía landing page
 
 
 ## Development
