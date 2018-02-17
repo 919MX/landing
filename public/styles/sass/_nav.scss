@@ -9,12 +9,24 @@ header {
   display: inline-block;
 }
 
-header li a {
-
-}
-
-header ul {
-  float: right;
+header {
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  li:not(:last-of-type) {
+    margin-right: 38px;
+  }
+  li a {
+    opacity: 0.8;
+    font-family: 'nunito-sans-800', sans-serif;
+    font-size: 11px;
+    color: #000000;
+    letter-spacing: 0.8px;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
 }
 
 footer {
