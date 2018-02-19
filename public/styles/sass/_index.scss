@@ -1,5 +1,3 @@
-// HERO
-
 #index {
   header {
     height: 100vh;
@@ -19,8 +17,6 @@
   background-size: cover;
   height: 100vh;
 }
-
-// LOGO WALL
 
 #logo-wall {
   padding: 46px;
@@ -64,8 +60,6 @@
   display: inline-block;
 }
 
-// FEATURES
-
 #feature1-img {
   background: url(../assets/img/feature1.png) no-repeat;
   background-size: 586px 624px;
@@ -86,8 +80,6 @@
   width: 736px;
   height: 455px;
 }
-
-// FOOTER
 
 footer {
   #email, #git {
@@ -113,8 +105,6 @@ footer {
   background-size: cover;
 }
 
-// MAP
-
 #map {
   display: block;
   width: 100vw;
@@ -123,8 +113,6 @@ footer {
 
 
 @media screen and (min-width: 1400px) {
-
-// HERO
 
 #index header {
   padding: 28px 5px 0 5px;
@@ -141,42 +129,32 @@ footer {
     }
   }
 }
-
-// LOGO WALL
-
 #logo-wall {
   margin-top: -51px;
   margin-bottom: 88px;
 }
-
-// FEATURES
-
 #feature1, #feature2, #feature3 {
   p {
     margin-bottom: 21px;
   }
 }
-
 #feature1 {
   h2 {
     margin: 180px 0 10px 0;
     width: 330px;
   }
 }
-
 #feature2 {
   h2 {
     margin: 235px 0 10px 0;
   }
 }
-
 #feature3 {
   margin-bottom: 199px;
   h2 {
     margin: 86px 0 10px 0;
   }
 }
-
 #feature2, #feature3 {
   h2 {
     width: 330px;
@@ -185,9 +163,6 @@ footer {
     margin-bottom: 21px;
   }
 }
-
-// FOOTER
-
 #index footer {
   margin-top: 45px;
   padding: 212px 0 34px 0;
@@ -300,6 +275,137 @@ footer {
   }
   .button {
     margin-bottom: 89px;
+  }
+}
+header#beta {
+  margin-bottom: 0px;
+}
+
+}
+
+@media screen and (max-width: 979px) and (min-width: 768px) {
+
+header {
+  margin-bottom: 70vh;
+  padding: 28px 5px 0 5px;
+  a.button.white {
+    border: 1px solid $grey-7;
+    background-color: white;
+    color: $grey-7;
+    &:hover {
+      opacity: 1;
+    }
+    &:active {
+      color: $grey-7;
+    }
+  }
+  h1 {
+    font-size: 74px;
+    letter-spacing: -1.04px;
+    line-height: 72px;
+    margin: 101vh 0 -46px 0;
+  }
+  #hero-img-wrap {
+    width: 100%;
+    top: 95px;
+  }
+  #hero-img {
+    background-position: center;
+    height: 88vh;
+    opacity: 1;
+  }
+  #hero-content {
+    p {
+      width: 84%;
+      margin: 9px 0 19px 0;
+    }
+  }
+}
+section#logo-wall {
+  .container.wrap {
+    padding: 0px;
+  }
+  margin-bottom: 95px;
+  padding: 46px;
+  #tanganica, #reconstruir, #socialtic, #opi {
+    margin-top: 0px;
+  }
+}
+#feature1, #feature2, #feature3 {
+  text-align: center;
+}
+#feature1 {
+  p {
+    margin: 0 auto 21px auto;
+    width: 73%;
+  }
+  margin-bottom: -12px;
+  #feature1-img {
+    background: url(../assets/img/feature1-sm.png) no-repeat;
+    background-size: 617px 553px;
+    width: 617px;
+    height: 553px;
+  }
+  h2 {
+    margin: 0 0 10px 0;
+  }
+}
+#feature2 {
+  p {
+    margin: 0 auto;
+  }
+  margin-bottom: 16px;
+  #feature2-img {
+    background: url(../assets/img/feature2-sm.png) no-repeat;
+    background-size: 548px 593px;
+    width: 548px;
+    height: 593px;
+  }
+}
+#feature3 {
+  margin-bottom: 81px;
+  p {
+    margin: 0 auto 41px auto;
+  }
+  #feature3-img {
+    background: url(../assets/img/feature3-sm.png) no-repeat;
+    background-size: 743px 306px;
+    width: 743px;
+    height: 306px;
+  }
+  .tag {
+    margin-top: 17px;
+  }
+}
+#feature2, #feature3 {
+  h2 {
+    margin: 20px auto 10px auto;
+    width: 85%;
+  }
+  p {
+    width: 73%;
+  }
+}
+footer {
+  text-align: center;
+  margin-top: 45px;
+  padding: 118px 0 34px 0;
+  #footer-img {
+    height: 523px;
+  }
+  #footer-img-wrap {
+    width: 50%;
+    bottom: 82px;
+  }
+  h2 {
+    margin-bottom: 21px;
+  }
+  p {
+    width: 81%;
+    margin: 0 auto;
+  }
+  .button {
+    margin: 27px 0 89px 0;
   }
 }
 header#beta {
