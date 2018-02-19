@@ -99,11 +99,11 @@ header .img {
 #equipo {
   background-color: #F3F5F7;
 }
-#equipo h2:first-of-type {
-  padding-top: 176px;
+#equipo h2 {
+  padding: 179px 0 30px 0;
 }
 .person {
-  margin-top: 43px;
+  margin-bottom: 54px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -119,6 +119,7 @@ header .img {
 .name {
   display: flex;
   @include nunito-sans-200;
+  @include font-smoothing(antialiased);
   font-size: 24px;
   color: $grey-7;
   letter-spacing: 0;
@@ -129,6 +130,7 @@ header .img {
   display: flex;
   opacity: 0.6;
   @include nunito-sans-200;
+  @include font-smoothing(antialiased);
   font-size: 15px;
   color: #0F0F0F;
   letter-spacing: 0.6px;
@@ -136,14 +138,14 @@ header .img {
 }
 #consejo {
   background-color: #F3F5F7;
-  padding-bottom: 321px;
+  padding-bottom: 266px;
 }
 #consejo h2:before {
   background-color: #ADB6BF;
   border: 2px solid #F3F5F7;
 }
-#consejo h2:first-of-type {
-  padding-top: 66px;
+#consejo h2 {
+  padding: 15px 0 30px 0;
 }
 #testimonial {
   padding: 181px 0 290px 0;
@@ -153,6 +155,7 @@ header .img {
 }
 .quote {
   @include nunito-sans-200;
+  @include font-smoothing(antialiased);
   font-size: 24px;
   color: #141418;
   letter-spacing: 0;
@@ -183,4 +186,200 @@ header .img {
   letter-spacing: 0.52px;
   line-height: 12px;
   }
+
+}
+
+@media screen and (max-width: 1399px) and (min-width: 980px) {
+
+#nosotros {
+  h1 {
+    margin: 121px 0 124px 0;
+    font-size: 68px;
+    letter-spacing: -0.36px;
+    line-height: 76px;
+  }
+  h1:after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: auto;
+    background-color: #DBE1E6;
+    left: 81px;
+    height: 83%;
+    margin-top: 620px;
+    z-index: 1;
+  }
+  h2 {
+    font-size: 46px;
+    line-height: 50px;
+    letter-spacing: -0.23px;
+  }
+  h2:before {
+    content: '';
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    left: 76px;
+    margin-top: 14px;
+    z-index: 3;
+  }
+  .logo-wall {
+    height: 530px;
+    margin-top: -130px;
+    display: block;
+    background-color: #3DC59F;
+    position: relative;
+    z-index: 2;
+  }
+}
+.img-wrap {
+  position: relative;
+  display: block;
+  height: 341px;
+  margin-bottom: 56px;
+}
+.img {
+  display: flex;
+  position: absolute;
+  z-index: 0;
+  height: 341px;
+  width: 99.5%;
+  margin-left: .75%;
+}
+header .img {
+  background: url(../assets/img/nosotros-1.jpg) no-repeat left;
+  background-size: cover;
+}
+#mision p {
+  margin: 17px 0 78px 0;
+}
+#mision h2:before {
+  background-color: #3DC59F;
+}
+#mision .img {
+  background: url(../assets/img/nosotros-2.jpg) no-repeat left;
+  background-size: cover;
+}
+#vision p {
+  margin: 17px 0 78px 0;
+}
+#vision h2:before {
+  background-color: #3DC59F;
+}
+#vision .img {
+  background: url(../assets/img/nosotros-3.jpg) no-repeat left;
+  background-size: cover;
+}
+#historia h2:before {
+  background-color: #3DC59F;
+}
+#historia p {
+  width: 95%;
+}
+#historia p:first-of-type {
+  margin-top: 17px;
+}
+#historia p:not(:first-of-type) {
+  margin-top: 30px;
+}
+#historia p:last-of-type {
+  margin-bottom: 122px;
+}
+#equipo h2:before {
+  background-color: #ADB6BF;
+  border: 2px solid #F3F5F7;
+}
+#equipo {
+  background-color: #F3F5F7;
+}
+#equipo h2 {
+  padding: 140px 0 48px 0;
+}
+.person {
+  margin-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 3;
+}
+.portrait {
+  background-color: $white;
+  display: flex;
+  height: 290px;
+  width: 100%;
+  margin-bottom: 31px;
+}
+.name {
+  display: flex;
+  @include nunito-sans-200;
+  @include font-smoothing(antialiased);
+  font-size: 24px;
+  color: $grey-7;
+  letter-spacing: 0;
+  line-height: 30px;
+  margin-bottom: 3px;
+}
+.title {
+  display: flex;
+  opacity: 0.6;
+  @include nunito-sans-200;
+  @include font-smoothing(antialiased);
+  font-size: 15px;
+  color: #0F0F0F;
+  letter-spacing: 0.6px;
+  line-height: 30px;
+}
+#consejo {
+  background-color: #F3F5F7;
+  padding-bottom: 209px;
+}
+#consejo h2:before {
+  background-color: #ADB6BF;
+  border: 2px solid #F3F5F7;
+}
+#consejo h2 {
+  padding: 25px 0 32px 0;
+}
+#testimonial {
+  padding: 125px 0 195px 0;
+  position: relative;
+  z-index: 2;
+  background-color: $white;
+}
+.quote {
+  @include nunito-sans-200;
+  @include font-smoothing(antialiased);
+  font-size: 24px;
+  color: #141418;
+  letter-spacing: 0;
+  line-height: 40px;
+  text-align: center;
+}
+.attribution {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  margin: 19px auto 0 auto;
+}
+.author {
+  display: inline-flex;
+  @include roboto-500;
+  font-size: 13px;
+  color: #141418;
+  letter-spacing: 0.52px;
+  line-height: 12px;
+  margin-right: 14px;
+}
+.org {
+  display: inline-flex;
+  opacity: 0.3;
+  @include roboto-500;
+  font-size: 13px;
+  color: #141418;
+  letter-spacing: 0.52px;
+  line-height: 12px;
+  }
+
 }
