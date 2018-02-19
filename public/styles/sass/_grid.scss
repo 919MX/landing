@@ -37,6 +37,11 @@ $columns : 12;
   padding-right: 0;
 }
 
+.center {
+  @include flexbox;
+  @include justify-content(center);
+  text-align: center;
+}
 
 .relative {
   position: relative;

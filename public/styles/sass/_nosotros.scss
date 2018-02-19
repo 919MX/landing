@@ -53,7 +53,7 @@
   position: absolute;
   z-index: 0;
   height: 469px;
-  width: 99.5%;
+  width: 99.25%;
   margin-left: .75%;
 }
 header .img {
@@ -164,7 +164,6 @@ header .img {
 }
 .attribution {
   display: flex;
-  width: 50%;
   justify-content: center;
   margin: 19px auto 0 auto;
 }
@@ -245,7 +244,7 @@ header .img {
   position: absolute;
   z-index: 0;
   height: 341px;
-  width: 99.5%;
+  width: 99.25%;
   margin-left: .75%;
 }
 header .img {
@@ -359,7 +358,6 @@ header .img {
 }
 .attribution {
   display: flex;
-  width: 50%;
   justify-content: center;
   margin: 19px auto 0 auto;
 }
@@ -389,10 +387,10 @@ header .img {
 
 #nosotros {
   h1 {
-    margin: 121px 0 124px 0;
-    font-size: 68px;
-    letter-spacing: -0.36px;
-    line-height: 76px;
+    margin: 116px 0 108px 0;
+    font-size: 64px;
+    letter-spacing: -0.34px;
+    line-height: 72px;
   }
   h1:after {
     content: '';
@@ -402,7 +400,7 @@ header .img {
     background-color: #E5EAEF;
     left: 81px;
     height: 83%;
-    margin-top: 620px;
+    margin-top: 600px;
     z-index: 1;
   }
   h2 {
@@ -422,8 +420,8 @@ header .img {
     z-index: 3;
   }
   .logo-wall {
-    height: 530px;
-    margin-top: -130px;
+    height: 402px;
+    margin-top: -126px;
     display: block;
     background-color: #3DC59F;
     position: relative;
@@ -434,15 +432,15 @@ header .img {
   position: relative;
   display: block;
   height: 341px;
-  margin-bottom: 56px;
+  margin-bottom: 62px;
 }
 .img {
   display: flex;
   position: absolute;
   z-index: 0;
   height: 341px;
-  width: 99.5%;
-  margin-left: .75%;
+  width: 97.5%;
+  margin-left: 2.5%;
 }
 header .img {
   background: url(../assets/img/nosotros-1.jpg) no-repeat left;
@@ -468,20 +466,17 @@ header .img {
   background: url(../assets/img/nosotros-3.jpg) no-repeat left;
   background-size: cover;
 }
+#historia {
+  margin-bottom: 80px;
+}
 #historia h2:before {
   background-color: #3DC59F;
 }
-#historia p {
-  width: 95%;
-}
-#historia p:first-of-type {
+#historia p#opener {
   margin-top: 17px;
 }
-#historia p:not(:first-of-type) {
-  margin-top: 30px;
-}
-#historia p:last-of-type {
-  margin-bottom: 122px;
+#historia p {
+  margin-bottom: 30px;
 }
 #equipo h2:before {
   background-color: #ADB6BF;
@@ -491,10 +486,10 @@ header .img {
   background-color: #F3F5F7;
 }
 #equipo h2 {
-  padding: 140px 0 48px 0;
+  padding: 85px 0 48px 0;
 }
 .person {
-  margin-bottom: 44px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -503,9 +498,9 @@ header .img {
 .portrait {
   background-color: $white;
   display: flex;
-  height: 290px;
+  height: 213px;
   width: 100%;
-  margin-bottom: 31px;
+  margin-bottom: 22px;
 }
 .name {
   display: flex;
@@ -524,12 +519,12 @@ header .img {
   @include font-smoothing(antialiased);
   font-size: 15px;
   color: #0F0F0F;
-  letter-spacing: 0.6px;
+  letter-spacing: 0px;
   line-height: 30px;
 }
 #consejo {
   background-color: #F3F5F7;
-  padding-bottom: 209px;
+  padding-bottom: 198px;
 }
 #consejo h2:before {
   background-color: #ADB6BF;
@@ -539,7 +534,7 @@ header .img {
   padding: 25px 0 32px 0;
 }
 #testimonial {
-  padding: 125px 0 195px 0;
+  padding: 82px 0 125px 0;
   position: relative;
   z-index: 2;
   background-color: $white;
@@ -547,15 +542,14 @@ header .img {
 .quote {
   @include nunito-sans-200;
   @include font-smoothing(antialiased);
-  font-size: 24px;
+  font-size: 18px;
   color: #141418;
   letter-spacing: 0;
-  line-height: 40px;
+  line-height: 32px;
   text-align: center;
 }
 .attribution {
   display: flex;
-  width: 50%;
   justify-content: center;
   margin: 19px auto 0 auto;
 }
