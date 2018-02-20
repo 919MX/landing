@@ -46,9 +46,6 @@ a.green {
     @include transition(opacity, .15s, linear);
     padding: 13px 39px 10px 39px;
     color: $white;
-    &:hover {
-      opacity: .8;
-    }
     &:active {
       color: $white;
     }
@@ -60,7 +57,7 @@ a.green {
     padding: 13px 39px 10px 39px;
     color: $grey-7;
     &:hover {
-      opacity: .8;
+      border-color: #3DC587;
     }
     &:active {
       color: $white;

@@ -1,6 +1,11 @@
 #nosotros .nav a {
   color: #000000;
   opacity: 0.8;
+  @include transition(all, .15s, linear);
+  &:hover {
+    opacity: 1.0;
+    color: #3DC587;
+  }
 }
 
 @media screen and (min-width: 1400px) {

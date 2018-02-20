@@ -118,6 +118,10 @@ footer {
   color: white;
   opacity: 1.0;
   text-shadow: 0 0 20px rgba(0,0,0,0.60);
+  @include transition(all, .15s, linear);
+  &:hover {
+    opacity: 0.8;
+  }
 }
 #index header {
   padding: 28px 5px 0 5px;
@@ -197,6 +201,10 @@ footer {
   color: white;
   opacity: 1.0;
   text-shadow: 0 0 20px rgba(0,0,0,0.60);
+  @include transition(all, .15s, linear);
+  &:hover {
+    opacity: 0.8;
+  }
 }
 #index header {
   margin-bottom: -50px;
@@ -297,6 +305,10 @@ header#beta {
 #index .nav a {
   color: #000000;
   opacity: 0.8;
+  @include transition(all, .15s, linear);
+  &:hover {
+    color: #3DC587;
+  }
 }
 #index header {
   margin-bottom: 70vh;
@@ -306,10 +318,11 @@ header#beta {
     background-color: white;
     color: $grey-7;
     &:hover {
-      opacity: 1;
+      border-color: #3DC587;
+      color: #3DC587;
     }
     &:active {
-      color: $grey-7;
+      color: #3DC587;
     }
   }
   h1 {
@@ -433,6 +446,10 @@ header#beta {
 #index .nav a {
   color: #000000;
   opacity: 0.8;
+  @include transition(all, .15s, linear);
+  &:hover {
+    color: #3DC587;
+  }
 }
 
 #index header {
