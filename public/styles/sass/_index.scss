@@ -124,7 +124,7 @@ footer {
   }
 }
 #index header {
-  padding: 28px 5px 0 5px;
+  padding-top: 28px;
   h1 {
     margin: 159px 0 12px 0;
   }
@@ -208,7 +208,7 @@ footer {
 }
 #index header {
   margin-bottom: -50px;
-  padding: 28px 5px 0 5px;
+  padding-top: 28px;
   h1 {
     margin-top: 134px;
   }
@@ -295,9 +295,6 @@ footer {
     margin-bottom: 89px;
   }
 }
-header#beta {
-  margin-bottom: 0px;
-}
 
 }
 
@@ -312,7 +309,7 @@ header#beta {
 }
 #index header {
   margin-bottom: 70vh;
-  padding: 28px 5px 0 5px;
+  padding-top: 28px;
   a.button.white {
     border: 1px solid $grey-7;
     background-color: white;
@@ -433,9 +430,6 @@ footer {
   .button {
     margin: 27px 0 89px 0;
   }
-}
-header#beta {
-  margin-bottom: 0px;
 }
 
 }
@@ -575,14 +569,6 @@ footer {
   }
   .button {
     margin-bottom: 89px;
-  }
-}
-header#beta {
-  height: 54px;
-  margin-bottom: 0px;
-  padding: 28px 25px 0 25px;
-  #logo {
-    text-align: left;
   }
 }
 
