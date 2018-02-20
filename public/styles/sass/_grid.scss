@@ -37,6 +37,10 @@ $columns : 12;
   padding-right: 0;
 }
 
+.gutter {
+  padding-right: 0 !important;
+}
+
 .center {
   @include flexbox;
   @include justify-content(center);
