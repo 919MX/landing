@@ -114,6 +114,11 @@ footer {
 
 @media screen and (min-width: 1400px) {
 
+#index .nav a {
+  color: white;
+  opacity: 1.0;
+  text-shadow: 0 0 20px rgba(0,0,0,0.60);
+}
 #index header {
   padding: 28px 5px 0 5px;
   h1 {
@@ -188,6 +193,11 @@ footer {
 
 @media screen and (max-width: 1399px) and (min-width: 980px) {
 
+#index .nav a {
+  color: white;
+  opacity: 1.0;
+  text-shadow: 0 0 20px rgba(0,0,0,0.60);
+}
 #index header {
   margin-bottom: -50px;
   padding: 28px 5px 0 5px;
@@ -284,7 +294,10 @@ header#beta {
 }
 
 @media screen and (max-width: 979px) and (min-width: 768px) {
-
+#index .nav a {
+  color: #000000;
+  opacity: 0.8;
+}
 #index header {
   margin-bottom: 70vh;
   padding: 28px 5px 0 5px;
@@ -415,7 +428,12 @@ header#beta {
 }
 
 
-@media screen and (max-width: 767px) and (min-width: 320px) {
+@media screen and (max-width: 767px) and (min-width: 0px) {
+
+#index .nav a {
+  color: #000000;
+  opacity: 0.8;
+}
 
 #index header {
   height: auto;
@@ -427,10 +445,7 @@ header#beta {
     font-size: 39px;
   }
   #logo {
-    text-align: center;
     display: block;
-    margin-top: -3px;
-    padding-top: 0px;
     img {
       width: 96px;
       height: auto;

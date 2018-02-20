@@ -12,33 +12,6 @@
   padding: 12px 39px 10px 39px;
 }
 
-#index a.white {
-  border: 1px solid $white;
-  background-color: rgba(0,0,0,0.15);
-  @include transition(opacity, .15s, linear);
-  padding: 13px 39px 10px 39px;
-  color: $white;
-  &:hover {
-    opacity: .8;
-  }
-  &:active {
-    color: $white;
-  }
-}
-
-#nosotros a.white {
-  border: 1px solid $grey-7;
-  background-color: $white;
-  padding: 13px 39px 10px 39px;
-  color: $grey-7;
-  &:hover {
-    opacity: .8;
-  }
-  &:active {
-    color: $white;
-  }
-}
-
 a.solid-white {
   color: $green;
   background-color: $white;
@@ -63,5 +36,42 @@ a.green {
   }
   &:active {
     color: $green;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  #index a.white {
+    border: 1px solid $white;
+    @include transition(opacity, .15s, linear);
+    padding: 13px 39px 10px 39px;
+    color: $white;
+    &:hover {
+      opacity: .8;
+    }
+    &:active {
+      color: $white;
+    }
+  }
+
+  #nosotros a.white {
+    border: 1px solid $grey-7;
+    background-color: $white;
+    padding: 13px 39px 10px 39px;
+    color: $grey-7;
+    &:hover {
+      opacity: .8;
+    }
+    &:active {
+      color: $white;
+    }
+  }
+
+}
+
+@media screen and (max-width: 767px) and (min-width: 0px) {
+  .button.white {
+    border: none;
+    padding: 0px;
   }
 }
