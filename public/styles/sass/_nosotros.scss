@@ -8,6 +8,10 @@
   }
 }
 
+.img-wrap {
+  display: flex;
+}
+
 @media screen and (min-width: 1400px) {
 
 #nosotros {
@@ -21,7 +25,7 @@
     height: auto;
     background-color: #E5EAEF;
     left: 239px;
-    height: 83%;
+    height: 70%;
     margin-top: 769px;
     z-index: 1;
   }
@@ -42,14 +46,6 @@
   }
   p {
     width: 90%;
-  }
-  .logo-wall {
-    height: 530px;
-    margin-top: -140px;
-    display: block;
-    background-color: #3DC59F;
-    position: relative;
-    z-index: 2;
   }
 }
 .img-wrap {
@@ -122,9 +118,29 @@ header .img {
 .portrait {
   background-color: $white;
   display: flex;
-  height: 270px;
   width: 100%;
+  height: 100%;
+}
+.portrait-wrap {
+  width: 100%;
+  height: 270px;
   margin-bottom: 31px;
+}
+#eduardo .portrait {
+  background: url(../assets/img/eduardo.jpg) no-repeat center;
+  background-size: cover;
+}
+#kyle .portrait {
+  background: url(../assets/img/kyle.jpg) no-repeat center;
+  background-size: cover;
+}
+#luisa .portrait {
+  background: url(../assets/img/luisa.jpg) no-repeat center;
+  background-size: cover;
+}
+#carlos .portrait {
+  background: url(../assets/img/carlos.jpg) no-repeat center;
+  background-size: cover;
 }
 .name {
   display: flex;
@@ -157,6 +173,59 @@ header .img {
 #consejo h2 {
   padding: 15px 0 30px 0;
 }
+.partner-wall {
+    height: 530px;
+    margin: -140px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #3DC59F;
+    position: relative;
+    z-index: 2;
+    & .row:first-of-type {
+      padding-bottom: 9px;
+    }
+    & .row:last-of-type {
+      padding-top: 8px;
+    }
+    .logo {
+      width: 234px;
+      height: 138px;
+      display: inline-flex;
+    }
+    .logo#pienza {
+      background: url(../assets/img/logo-pienza.png) no-repeat;
+      background-size: 234px 138px;
+    }
+    .logo#reconstruir {
+      background: url(../assets/img/logo-reconstruir.png) no-repeat;
+      background-size: 234px 138px;
+    }
+    .logo#archipielago {
+      background: url(../assets/img/logo-archipielago.png) no-repeat;
+      background-size: 234px 138px;
+    }
+    .logo#tanganica {
+      background: url(../assets/img/logo-tanganica.png) no-repeat;
+      background-size: 234px 138px;
+    }
+    .logo#parquemexico {
+      background: url(../assets/img/logo-parquemexico.png) no-repeat;
+      background-size: 234px 138px;
+    }
+    .logo#opi {
+      background: url(../assets/img/logo-opi.png) no-repeat;
+      background-size: 234px 138px;
+    }
+    .logo#fortana {
+      background: url(../assets/img/logo-fortana.png) no-repeat;
+      background-size: 234px 138px;
+    }
+    .logo#residencia {
+      background: url(../assets/img/logo-residencia.png) no-repeat;
+      background-size: 234px 138px;
+    }
+  }
 #testimonial {
   padding: 181px 0 290px 0;
   position: relative;
@@ -233,14 +302,6 @@ header .img {
     left: 76px;
     margin-top: 14px;
     z-index: 3;
-  }
-  .logo-wall {
-    height: 530px;
-    margin-top: -130px;
-    display: block;
-    background-color: #3DC59F;
-    position: relative;
-    z-index: 2;
   }
 }
 .img-wrap {
@@ -351,6 +412,59 @@ header .img {
 #consejo h2 {
   padding: 25px 0 32px 0;
 }
+.partner-wall {
+  height: 530px;
+  margin-top: -130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #3DC59F;
+  position: relative;
+  z-index: 2;
+  & .row:first-of-type {
+    padding-bottom: 9px;
+  }
+  & .row:last-of-type {
+    padding-top: 8px;
+  }
+  .logo {
+    width: 234px;
+    height: 138px;
+    display: inline-flex;
+  }
+  .logo#pienza {
+    background: url(../assets/img/logo-pienza.png) no-repeat;
+    background-size: 234px 138px;
+  }
+  .logo#reconstruir {
+    background: url(../assets/img/logo-reconstruir.png) no-repeat;
+    background-size: 234px 138px;
+  }
+  .logo#archipielago {
+    background: url(../assets/img/logo-archipielago.png) no-repeat;
+    background-size: 234px 138px;
+  }
+  .logo#tanganica {
+    background: url(../assets/img/logo-tanganica.png) no-repeat;
+    background-size: 234px 138px;
+  }
+  .logo#parquemexico {
+    background: url(../assets/img/logo-parquemexico.png) no-repeat;
+    background-size: 234px 138px;
+  }
+  .logo#opi {
+    background: url(../assets/img/logo-opi.png) no-repeat;
+    background-size: 234px 138px;
+  }
+  .logo#fortana {
+    background: url(../assets/img/logo-fortana.png) no-repeat;
+    background-size: 234px 138px;
+  }
+  .logo#residencia {
+    background: url(../assets/img/logo-residencia.png) no-repeat;
+    background-size: 234px 138px;
+  }
+}
 #testimonial {
   padding: 125px 0 195px 0;
   position: relative;
@@ -428,14 +542,6 @@ header .img {
     left: 76px;
     margin-top: 14px;
     z-index: 3;
-  }
-  .logo-wall {
-    height: 402px;
-    margin-top: -126px;
-    display: block;
-    background-color: #3DC59F;
-    position: relative;
-    z-index: 2;
   }
 }
 .img-wrap {
@@ -543,6 +649,59 @@ header .img {
 #consejo h2 {
   padding: 25px 0 32px 0;
 }
+.partner-wall {
+  height: 402px;
+  margin-top: -126px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #3DC59F;
+  position: relative;
+  z-index: 2;
+  & .row:first-of-type {
+    padding-bottom: 9px;
+  }
+  & .row:last-of-type {
+    padding-top: 8px;
+  }
+  .logo {
+    width: 172px;
+    height: 138px;
+    display: inline-flex;
+  }
+  .logo#pienza {
+    background: url(../assets/img/logo-pienza-sm.png) no-repeat;
+    background-size: 172px 138px;
+  }
+  .logo#reconstruir {
+    background: url(../assets/img/logo-reconstruir-sm.png) no-repeat;
+    background-size: 172px 138px;
+  }
+  .logo#archipielago {
+    background: url(../assets/img/logo-archipielago-sm.png) no-repeat;
+    background-size: 172px 138px;
+  }
+  .logo#tanganica {
+    background: url(../assets/img/logo-tanganica-sm.png) no-repeat;
+    background-size: 172px 138px;
+  }
+  .logo#parquemexico {
+    background: url(../assets/img/logo-parquemexico-sm.png) no-repeat;
+    background-size: 172px 138px;
+  }
+  .logo#opi {
+    background: url(../assets/img/logo-opi-sm.png) no-repeat;
+    background-size: 172px 138px;
+  }
+  .logo#fortana {
+    background: url(../assets/img/logo-fortana-sm.png) no-repeat;
+    background-size: 172px 138px;
+  }
+  .logo#residencia {
+    background: url(../assets/img/logo-residencia-sm.png) no-repeat;
+    background-size: 172px 138px;
+  }
+}
 #testimonial {
   padding: 82px 0 125px 0;
   position: relative;
@@ -597,14 +756,6 @@ header .img {
     font-size: 46px;
     line-height: 50px;
     letter-spacing: -0.23px;
-  }
-  .logo-wall {
-    height: 402px;
-    margin-top: -64px;
-    display: block;
-    background-color: #3DC59F;
-    position: relative;
-    z-index: 2;
   }
 }
 .img-wrap {
@@ -710,6 +861,59 @@ header .img {
 }
 #consejo h2 {
   padding: 21px 0 27px 0;
+}
+.partner-wall {
+  height: 402px;
+  margin-top: -64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #3DC59F;
+  position: relative;
+  z-index: 2;
+  & .row:first-of-type {
+  padding-bottom: 9px;
+  }
+  & .row:last-of-type {
+    padding-top: 8px;
+  }
+  .logo {
+    width: 139px;
+    height: 90px;
+    display: inline-flex;
+  }
+  .logo#pienza {
+    background: url(../assets/img/logo-pienza-sm.png) no-repeat;
+    background-size: 139px 90px;
+  }
+  .logo#reconstruir {
+    background: url(../assets/img/logo-reconstruir-sm.png) no-repeat;
+    background-size: 139px 90px;
+  }
+  .logo#archipielago {
+    background: url(../assets/img/logo-archipielago-sm.png) no-repeat;
+    background-size: 139px 90px;
+  }
+  .logo#tanganica {
+    background: url(../assets/img/logo-tanganica-sm.png) no-repeat;
+    background-size: 139px 90px;
+  }
+  .logo#parquemexico {
+    background: url(../assets/img/logo-parquemexico-sm.png) no-repeat;
+    background-size: 139px 90px;
+  }
+  .logo#opi {
+    background: url(../assets/img/logo-opi-sm.png) no-repeat;
+    background-size: 139px 90px;
+  }
+  .logo#fortana {
+    background: url(../assets/img/logo-fortana-sm.png) no-repeat;
+    background-size: 139px 90px;
+  }
+  .logo#residencia {
+    background: url(../assets/img/logo-residencia-sm.png) no-repeat;
+    background-size: 139px 90px;
+  }
 }
 #testimonial {
   padding: 81px 0 125px 0;
