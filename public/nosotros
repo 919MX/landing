@@ -38,7 +38,7 @@
 
         <div class="col-lg-10 col-md-10 col-sm-7 col-xs-3">
           <ul class="nav">
-            <li><a href="https://ensintonia.org/nosotros">Nosotros</a></li>
+            <li><a href="/nosotros">Nosotros</a></li>
             <li><a href="https://app.ensintonia.org" class="button white">Entrar</a></li>
           </ul>
         </div>
@@ -304,10 +304,10 @@
 
             <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-8 col-xs-4 around-lg between-md between-sm between-xs">
 
-              <span class="logo" id="pienza"></span>
-              <span class="logo" id="reconstruir"></span>
-              <span class="logo" id="archipielago"></span>
-              <span class="logo" id="tanganica"></span>
+              <a href="https://www.facebook.com/pienzasostenible/"><span class="logo" id="pienza" /></a>
+              <a href="https://www.facebook.com/ReConstruir-M%C3%A9xico-479341942439807/"><span class="logo" id="reconstruir"></span></a>
+              <a href="http://www.archipielagomx.com/"><span class="logo" id="archipielago"></span></a>
+              <a href="https://www.facebook.com/lagotanganica67/"><span class="logo" id="tanganica"></span></a>
 
             </div>
 
@@ -317,10 +317,10 @@
 
             <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-8 col-xs-4 around-lg between-md between-sm between-xs">
 
-              <span class="logo" id="parquemexico"></span>
-              <span class="logo" id="opi"></span>
-              <span class="logo" id="fortana"></span>
-              <span class="logo" id="residencia"></span>
+              <a href="https://www.facebook.com/AcopioParqueMexico/"><span class="logo" id="parquemexico"></span></a>
+              <a href="https://opianalytics.com/"><span class="logo" id="opi"></span></a>
+              <a href="https://fortana.co/"><span class="logo" id="fortana"></span></a>
+              <a href="https://residencia.com.mx/"><span class="logo" id="residencia"></span></a>
 
             </div>
 
