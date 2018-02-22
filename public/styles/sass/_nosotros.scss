@@ -283,7 +283,7 @@ header .img {
     height: auto;
     background-color: #E5EAEF;
     left: 81px;
-    height: 83%;
+    height: 72%;
     margin-top: 620px;
     z-index: 1;
   }
@@ -379,7 +379,27 @@ header .img {
   display: flex;
   height: 290px;
   width: 100%;
+}
+.portrait-wrap {
+  width: 100%;
+  height: 290px;
   margin-bottom: 31px;
+}
+#eduardo .portrait {
+  background: url(../assets/img/eduardo.jpg) no-repeat center;
+  background-size: cover;
+}
+#kyle .portrait {
+  background: url(../assets/img/kyle.jpg) no-repeat center;
+  background-size: cover;
+}
+#luisa .portrait {
+  background: url(../assets/img/luisa.jpg) no-repeat center;
+  background-size: cover;
+}
+#carlos .portrait {
+  background: url(../assets/img/carlos.jpg) no-repeat center;
+  background-size: cover;
 }
 .name {
   display: flex;
@@ -414,7 +434,7 @@ header .img {
 }
 .partner-wall {
   height: 530px;
-  margin-top: -130px;
+  margin: -130px 0 20px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -523,7 +543,7 @@ header .img {
     height: auto;
     background-color: #E5EAEF;
     left: 81px;
-    height: 83%;
+    height: 72%;
     margin-top: 600px;
     z-index: 1;
   }
@@ -616,7 +636,27 @@ header .img {
   display: flex;
   height: 213px;
   width: 100%;
+}
+.portrait-wrap {
+  width: 100%;
+  height: 213px;
   margin-bottom: 22px;
+}
+#eduardo .portrait {
+  background: url(../assets/img/eduardo.jpg) no-repeat center;
+  background-size: cover;
+}
+#kyle .portrait {
+  background: url(../assets/img/kyle.jpg) no-repeat center;
+  background-size: cover;
+}
+#luisa .portrait {
+  background: url(../assets/img/luisa.jpg) no-repeat center;
+  background-size: cover;
+}
+#carlos .portrait {
+  background: url(../assets/img/carlos.jpg) no-repeat center;
+  background-size: cover;
 }
 .name {
   display: flex;
@@ -651,7 +691,7 @@ header .img {
 }
 .partner-wall {
   height: 402px;
-  margin-top: -126px;
+  margin: -126px 0 20px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -829,7 +869,27 @@ header .img {
   display: flex;
   height: 172px;
   width: 100%;
+}
+.portrait-wrap {
+  width: 100%;
+  height: 172px;
   margin-bottom: 15px;
+}
+#eduardo .portrait {
+  background: url(../assets/img/eduardo.jpg) no-repeat center;
+  background-size: cover;
+}
+#kyle .portrait {
+  background: url(../assets/img/kyle.jpg) no-repeat center;
+  background-size: cover;
+}
+#luisa .portrait {
+  background: url(../assets/img/luisa.jpg) no-repeat center;
+  background-size: cover;
+}
+#carlos .portrait {
+  background: url(../assets/img/carlos.jpg) no-repeat center;
+  background-size: cover;
 }
 .name {
   display: flex;
@@ -864,7 +924,7 @@ header .img {
 }
 .partner-wall {
   height: 402px;
-  margin-top: -64px;
+  margin: -64px 0 16px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -872,10 +932,10 @@ header .img {
   position: relative;
   z-index: 2;
   & .row:first-of-type {
-  padding-bottom: 9px;
+  padding-bottom: 1px;
   }
   & .row:last-of-type {
-    padding-top: 8px;
+    padding-top: 1px;
   }
   .logo {
     width: 139px;
@@ -883,35 +943,35 @@ header .img {
     display: inline-flex;
   }
   .logo#pienza {
-    background: url(../assets/img/logo-pienza-sm.png) no-repeat;
+    background: url(../assets/img/logo-pienza-xs.png) no-repeat;
     background-size: 139px 90px;
   }
   .logo#reconstruir {
-    background: url(../assets/img/logo-reconstruir-sm.png) no-repeat;
+    background: url(../assets/img/logo-reconstruir-xs.png) no-repeat;
     background-size: 139px 90px;
   }
   .logo#archipielago {
-    background: url(../assets/img/logo-archipielago-sm.png) no-repeat;
+    background: url(../assets/img/logo-archipielago-xs.png) no-repeat;
     background-size: 139px 90px;
   }
   .logo#tanganica {
-    background: url(../assets/img/logo-tanganica-sm.png) no-repeat;
+    background: url(../assets/img/logo-tanganica-xs.png) no-repeat;
     background-size: 139px 90px;
   }
   .logo#parquemexico {
-    background: url(../assets/img/logo-parquemexico-sm.png) no-repeat;
+    background: url(../assets/img/logo-parquemexico-xs.png) no-repeat;
     background-size: 139px 90px;
   }
   .logo#opi {
-    background: url(../assets/img/logo-opi-sm.png) no-repeat;
+    background: url(../assets/img/logo-opi-xs.png) no-repeat;
     background-size: 139px 90px;
   }
   .logo#fortana {
-    background: url(../assets/img/logo-fortana-sm.png) no-repeat;
+    background: url(../assets/img/logo-fortana-xs.png) no-repeat;
     background-size: 139px 90px;
   }
   .logo#residencia {
-    background: url(../assets/img/logo-residencia-sm.png) no-repeat;
+    background: url(../assets/img/logo-residencia-xs.png) no-repeat;
     background-size: 139px 90px;
   }
 }

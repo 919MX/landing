@@ -300,9 +300,9 @@
 
           <div class="partner-wall">
 
-            <div class="row center-md center-sm">
+            <div class="row center-md center-sm center-xs">
 
-            <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-8 col-xs-4 around-lg between-md between-sm">
+            <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-8 col-xs-4 around-lg between-md between-sm between-xs">
 
               <span class="logo" id="pienza"></span>
               <span class="logo" id="reconstruir"></span>
@@ -313,9 +313,9 @@
 
             </div>
 
-            <div class="row center-md center-sm">
+            <div class="row center-md center-sm center-xs">
 
-            <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-8 col-xs-4 around-lg between-md between-sm">
+            <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-8 col-xs-4 around-lg between-md between-sm between-xs">
 
               <span class="logo" id="parquemexico"></span>
               <span class="logo" id="opi"></span>
