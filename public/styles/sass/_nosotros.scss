@@ -142,6 +142,10 @@ header .img {
   background: url(../assets/img/carlos.jpg) no-repeat center;
   background-size: cover;
 }
+#rodrigo .portrait {
+  background: url(../assets/img/rodrigo.jpg) no-repeat center;
+  background-size: cover;
+}
 .name {
   display: flex;
   @include nunito-sans-200;
@@ -401,6 +405,10 @@ header .img {
   background: url(../assets/img/carlos.jpg) no-repeat center;
   background-size: cover;
 }
+#rodrigo .portrait {
+  background: url(../assets/img/rodrigo.jpg) no-repeat center;
+  background-size: cover;
+}
 .name {
   display: flex;
   @include nunito-sans-200;
@@ -658,6 +666,10 @@ header .img {
   background: url(../assets/img/carlos.jpg) no-repeat center;
   background-size: cover;
 }
+#rodrigo .portrait {
+  background: url(../assets/img/rodrigo.jpg) no-repeat center;
+  background-size: cover;
+}
 .name {
   display: flex;
   @include nunito-sans-200;
@@ -889,6 +901,10 @@ header .img {
 }
 #carlos .portrait {
   background: url(../assets/img/carlos.jpg) no-repeat center;
+  background-size: cover;
+}
+#rodrigo .portrait {
+  background: url(../assets/img/rodrigo.jpg) no-repeat center;
   background-size: cover;
 }
 .name {
