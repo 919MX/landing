@@ -5,11 +5,11 @@
   cursor: pointer;
   background: none;
   border: none;
-  padding: 16px 51px 14px 51px;
+  padding: 17px 45px 15px 45px;
 }
 
 .small {
-  padding: 12px 39px 10px 39px;
+  padding: 13px 36px 11px 36px;
 }
 
 a.solid-white {
@@ -17,6 +17,7 @@ a.solid-white {
   background-color: $white;
   @include box-shadow(0,10px,20px,0,0,0,0,0.04);
   @include transition(box-shadow, .15s, linear);
+  @include font-smoothing(antialiased);
   padding: 17px 44px 15px 44px;
   &:hover {
     @include box-shadow(0,10px,20px,0,0,0,0,0.1);
@@ -27,9 +28,9 @@ a.solid-white {
 }
 
 a.green {
-  color: $green;
+  color: $white;
   border: 1px solid $green;
-  background-color: $white;
+  background-color: $green-blue;
   @include transition(box-shadow, .15s, linear);
   &:hover {
     @include box-shadow(0,10px,20px,0,0,0,0,0.08);
