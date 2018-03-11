@@ -1,6 +1,6 @@
 # `aws` command depends on credentials in `~/.aws` directory
 ./build.sh
-bucketname='ensintonia.org'
+bucketname='brigada.mx'
 
 aws s3 cp public/index.html s3://${bucketname} --acl public-read
 aws s3 cp public/error.html s3://${bucketname} --acl public-read
