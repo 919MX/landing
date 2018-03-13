@@ -67,7 +67,7 @@ a.empty-green {
     }
   }
 
-  #nosotros a.white {
+  #nosotros a.white, #textpage a.white {
     border: 1px solid $grey-7;
     background-color: $white;
     padding: 13px 39px 10px 39px;

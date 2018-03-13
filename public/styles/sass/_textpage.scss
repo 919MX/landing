@@ -1,0 +1,29 @@
+#textpage {
+  .navbar {
+    border-bottom: 1px solid #EAEDEF;
+    padding-bottom: 27px;
+  }
+  .nav a {
+    color: #000000;
+    opacity: 0.8;
+    @include transition(all, .15s, linear);
+    &:hover {
+      opacity: 1.0;
+      color: #3DC587;
+    }
+  }
+}
+
+
+// LARGE SCREENS
+@media screen and (min-width: 1400px) {
+
+#textpage {
+  h1 {
+    font-size: 54px;
+    line-height: 58px;
+    margin-top: 100px;
+  }
+}
+
+}

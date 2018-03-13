@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <title>Brigada - Acerca de nosotros</title>
+  <title>Acerca de nosotros - Brigada</title>
   <meta name="description" content="En Brigada buscamos crear mecanismos eficientes y confiables para la recuperación ante desastres naturales.">
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -30,7 +30,7 @@
 
     <div class="container wrap">
 
-      <div class="row bleed middle-xs">
+      <div class="row bleed middle">
 
         <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
           <a id="logo" href="/"><img src="assets/img/logo-brigada.svg" width="80px" height="auto" alt="Logo" /></a>
@@ -48,7 +48,7 @@
       <div class="row">
 
         <div class="col-lg-7 col-lg-offset-2 col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-4">
-          <h1>Somos una plataforma civil integrada por múltiples talentos de ciudadanos</h1>
+          <h1>Somos una red abierta y gratuita que depende de la participación de todos</h1>
         </div>
 
       </div>
@@ -100,7 +100,7 @@
         </div>
 
         <div class="col-lg-4 col-lg-offset-1 col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-1 col-xs-4">
-          <p>Ser una plataforma reconocida por su acción coordinada y efectiva en la prevención, acción y reacción ante emergencias ocasionadas por desastres naturales a través de la activación de su diversa red ciudadana bajo principios de desarrollo social y sustentable, estado de derecho y fomento de los derechos humanos.</p>
+          <p>Ser una plataforma reconocida por su acción coordinada y efectiva en la reacción ante emergencias ocasionadas por desastres naturales a través de la activación de su diversa red ciudadana bajo principios de desarrollo social y sustentable, estado de derecho y fomento de los derechos humanos.</p>
         </div>
 
       </div>
@@ -131,7 +131,7 @@
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-5 col-sm-offset-3">
-          <p>A partir de 2018, el directorio Brigada visibiliza la labor de los distintos proyectos operando en torno a la reconstrucción señalando sus necesidades para operar: recursos humanos, financieros o materiales, permitiendo, así, vincular recursos de donadores y voluntarios a donde más se necesita.</p>
+          <p>A partir de 2018, Brigada visibiliza la labor de los distintos proyectos operando en torno a la reconstrucción, permitiendo, así, vincular recursos de donadores y voluntarios a donde más se necesita.</p>
           <p>De esta forma, buscamos dar seguimiento puntual al desarrollo de las comunidades permitiendo a la vez que creamos una red de confianza entre los actores involucrados en los procesos de reconstrucción.</p>
           <p>Con la información recabada, buscamos tener documentación sólida de cada proyecto y del conjunto de esfuerzos contrastada con la información de fuentes oficiales que ayuden a visibilizar los sitios donde la ayuda es aún requerida.</p>
         </div>
@@ -231,92 +231,6 @@
         </div>
 
     </div>
-
-  </section>
-
-  <section id="consejo">
-
-<!--     <div class="container wrap">
-
-      <div class="row bleed-sm">
-
-        <div class="col-lg-10 col-lg-offset-2 col-md-11 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-4">
-          <h2>Consejo administrativo</h2>
-        </div>
-
-        <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-8 col-xs-4">
-
-          <div class="row">
-
-          <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
-            <div class="person">
-              <span class="portrait"></span>
-              <span class="name">Nombre Apellido</span>
-              <span class="title">Puesto</span>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
-            <div class="person">
-              <span class="portrait"></span>
-              <span class="name">Nombre Apellido</span>
-              <span class="title">Puesto</span>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
-            <div class="person">
-              <span class="portrait"></span>
-              <span class="name">Nombre Apellido</span>
-              <span class="title">Puesto</span>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
-            <div class="person">
-              <span class="portrait"></span>
-              <span class="name">Nombre Apellido</span>
-              <span class="title">Puesto</span>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
-            <div class="person">
-              <span class="portrait"></span>
-              <span class="name">Nombre Apellido</span>
-              <span class="title">Puesto</span>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
-            <div class="person">
-              <span class="portrait"></span>
-              <span class="name">Nombre Apellido</span>
-              <span class="title">Puesto</span>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
-            <div class="person">
-              <span class="portrait"></span>
-              <span class="name">Nombre Apellido</span>
-              <span class="title">Puesto</span>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-3 col-sm-2 col-xs-2">
-            <div class="person">
-              <span class="portrait"></span>
-              <span class="name">Nombre Apellido</span>
-              <span class="title">Puesto</span>
-            </div>
-          </div>
-
-        </div>
-
-        </div>
-
-    </div> -->
 
   </section>
 

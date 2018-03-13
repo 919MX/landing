@@ -7,6 +7,10 @@ header {
 #logo {
   padding-top: 3px;
   display: inline-block;
+  @include transition(opacity, .15s, linear);
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 header {

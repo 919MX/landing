@@ -47,6 +47,11 @@ $columns : 12;
   text-align: center;
 }
 
+.middle {
+  @include align-items(center);
+  @include flexbox;
+}
+
 .relative {
   position: relative;
 }
