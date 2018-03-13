@@ -16,24 +16,39 @@ a.solid-white {
   color: $green;
   background-color: $white;
   @include box-shadow(0,10px,20px,0,0,0,0,0.04);
-  @include transition(box-shadow, .15s, linear);
+  @include transition(background-color, .15s, linear);
   @include font-smoothing(antialiased);
   padding: 17px 44px 15px 44px;
   &:hover {
-    @include box-shadow(0,10px,20px,0,0,0,0,0.1);
+    background-color: #FAFBFC;
   }
   &:active {
     color: $green;
   }
 }
 
-a.green {
+a.solid-green {
   color: $white;
-  border: 1px solid $green;
   background-color: $green-blue;
-  @include transition(box-shadow, .15s, linear);
+  @include font-smoothing(antialiased);
+  @include transition(background-color, .15s, linear);
   &:hover {
-    @include box-shadow(0,10px,20px,0,0,0,0,0.08);
+    background-color: #13A68C;
+  }
+  &:active {
+    color: $green;
+  }
+}
+
+a.empty-green {
+  color: $green-blue;
+  border: 1px solid $green-blue;
+  padding: 16px 44px 14px 44px;
+  background-color: $white;
+  @include font-smoothing(antialiased);
+  @include transition(border-color, .15s, linear);
+  &:hover {
+    border-color: #01886C;
   }
   &:active {
     color: $green;
