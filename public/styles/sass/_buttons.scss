@@ -43,7 +43,7 @@ a.solid-green {
 a.empty-green {
   color: $green-blue;
   border: 1px solid $green-blue;
-  padding: 16px 44px 14px 44px;
+  padding: 16px 31px 14px 31px;
   background-color: $white;
   @include font-smoothing(antialiased);
   @include transition(border-color, .15s, linear);

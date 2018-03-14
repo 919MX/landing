@@ -232,6 +232,13 @@ footer {
         margin-bottom: 31px;
       }
     }
+    a.solid-green {
+      padding: 17px 37px 15px 37px;
+      margin-right: 8px;
+    }
+    a.empty-green {
+      padding: 16px 23px 14px 23px;
+    }
   }
   #logo-wall {
     margin-bottom: 41px;
@@ -343,7 +350,7 @@ footer {
     }
     #hero-img-wrap {
       width: 100%;
-      top: 95px;
+      top: 97px;
     }
     #hero-img {
       background-position: center;
@@ -355,6 +362,13 @@ footer {
         width: 84%;
         margin: 9px 0 19px 0;
       }
+    }
+    a.solid-green {
+      padding: 17px 50.5px 15px 50.5px;
+      margin-right: 8px;
+    }
+    a.empty-green {
+      padding: 16px 37px 14px 37px;
     }
   }
   section#logo-wall {
@@ -459,6 +473,8 @@ footer {
 
   #index header {
     height: auto;
+    margin-bottom: 54px;
+    padding-top: 28px;
     h1 {
       font-size: 56px;
       line-height: 54px;
@@ -473,8 +489,6 @@ footer {
         height: auto;
       }
     }
-    margin-bottom: 54px;
-    padding: 28px 5px 0 5px;
     h1 {
       margin: 102vh 0 22px 0;
     }
@@ -492,6 +506,13 @@ footer {
       p {
         margin-bottom: 22px;
       }
+    }
+    a.solid-green {
+      padding: 17px 45px 15px 45px;
+      margin-right: 5px;
+    }
+    a.empty-green {
+      padding: 16px 31px 14px 31px;
     }
   }
   section#logo-wall {
