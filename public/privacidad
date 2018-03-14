@@ -33,7 +33,7 @@
       <div class="row bleed middle navbar">
 
         <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
-          <a id="logo" href="/"><img src="assets/img/logo-brigada.svg" width="80px" height="auto" alt="Logo" /></a>
+          <a id="logo" href="/"><img src="assets/img/logo-brigada.svg" width="90px" height="auto" alt="Logo" /></a>
         </div>
 
         <div class="col-lg-10 col-md-10 col-sm-7 col-xs-3">

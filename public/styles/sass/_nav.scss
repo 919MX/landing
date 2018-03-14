@@ -5,7 +5,7 @@ header {
 }
 
 #logo {
-  padding-top: 3px;
+  padding-bottom: 3px;
   display: inline-block;
   @include transition(opacity, .15s, linear);
   &:hover {
