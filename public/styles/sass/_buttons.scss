@@ -18,7 +18,7 @@ a.solid-white {
   @include box-shadow(0,10px,20px,0,0,0,0,0.04);
   @include transition(background-color, .15s, linear);
   @include font-smoothing(antialiased);
-  padding: 17px 44px 15px 44px;
+  padding: 17px 54px 15px 54px;
   &:hover {
     background-color: #FAFBFC;
   }
