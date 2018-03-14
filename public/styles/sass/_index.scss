@@ -70,10 +70,10 @@
 }
 
 #feature3-img {
-  background: url(../assets/img/feature3.png) no-repeat;
-  background-size: 736px 455px;
-  width: 736px;
-  height: 455px;
+  background: url(../assets/img/feature3-lg.png) no-repeat;
+  background-size: 963px 702px;
+  width: 963px;
+  height: 702px;
 }
 
 footer {
@@ -153,12 +153,23 @@ footer {
     }
   }
   #feature2 {
+    margin-top: -81px;
     h2 {
       margin-bottom: 10px;
     }
+    #feature2-img {
+      margin-left: -10%;
+    }
   }
   #feature3 {
-    margin-bottom: 199px;
+    margin: 165px 0 270px 0;
+    #feature3-img {
+      position: absolute;
+      left: 0;
+      display: flex;
+      align-self: center;
+      z-index: -1;
+    }
     h2 {
       margin-bottom: 10px;
     }
@@ -223,23 +234,11 @@ footer {
     }
   }
   #logo-wall {
-    margin-bottom: 100px;
+    margin-bottom: 41px;
   }
   #feature1, #feature2, #feature3 {
     p {
       margin-bottom: 21px;
-    }
-  }
-  section#feature1 {
-    margin: 157px 0 36px 0;
-    #feature1-img {
-      background-size: 479px 510px;
-      width: 479px;
-      height: 510px;
-    }
-    h2 {
-      margin-bottom: 10px;
-      width: 330px;
     }
   }
   #feature1 {
@@ -249,9 +248,13 @@ footer {
       width: 581px;
       height: 654px;
     }
+    h2 {
+      margin-bottom: 10px;
+      width: 330px;
+    }
   }
   #feature2 {
-    margin-bottom: 16px;
+    margin: -38px 0 16px 0;
     #feature2-img {
       background: url(../assets/img/feature2-md.png) no-repeat;
       background-size: 570px 742px;
@@ -260,13 +263,18 @@ footer {
     }
   }
   #feature3 {
+    margin: 4px 0 192px 0;
     #feature3-img {
       background: url(../assets/img/feature3-md.png) no-repeat;
-      background-size: 503px 326px;
-      width: 503px;
-      height: 326px;
+      background-size: 741px 647px;
+      width: 741px;
+      height: 647px;
+      position: absolute;
+      left: 0;
+      display: flex;
+      align-self: center;
+      z-index: -1;
     }
-    margin-bottom: 161px;
   }
   #feature2, #feature3 {
     h2 {
@@ -397,9 +405,9 @@ footer {
     }
     #feature3-img {
       background: url(../assets/img/feature3-sm.png) no-repeat;
-      background-size: 743px 306px;
-      width: 743px;
-      height: 306px;
+      background-size: 768px 552px;
+      width: 768px;
+      height: 552px;
     }
   }
   #feature2, #feature3 {
@@ -538,10 +546,10 @@ footer {
       margin: 0 auto 21px auto;
     }
     #feature3-img {
-      background: url(../assets/img/feature3-xs.png) no-repeat center;
-      background-size: 456px 233px;
-      width: 456px;
-      height: 233px;
+      background: url(../assets/img/feature3-sm.png) no-repeat center;
+      background-size: 453px 325px;
+      width: 453px;
+      height: 325px;
       margin-top: 40px;
     }
   }
