@@ -2,35 +2,40 @@
   header {
     height: calc(100vh + 60px);
   }
-  #tanganica {
-    background: url(../assets/img/tanganica.png) no-repeat;
-    background-size: 89px 95px;
-    width: 89px;
-    height: 95px;
+  #pienza {
+    background: url(../assets/img/logo-pienza-dark.png) no-repeat;
+    background-size: 130px 27px;
+    width: 130px;
+    height: 27px;
+    margin-top: 2px;
+  }
+  #lago {
+    background: url(../assets/img/logo-lago-dark.png) no-repeat;
+    background-size: 81px 81px;
+    width: 81px;
+    height: 81px;
+    margin-top: 6px;
   }
   #reconstruir {
-    background: url(../assets/img/reconstruir.png) no-repeat;
-    background-size: 191px 36px;
-    width: 191px;
-    height: 36px;
-    margin-top: 8px;
+    background: url(../assets/img/logo-reconstruir-dark.png) no-repeat;
+    background-size: 179px 34px;
+    width: 179px;
+    height: 34px;
+    margin-top: 13px;
   }
-  #socialtic {
-    background: url(../assets/img/socialtic.png) no-repeat;
-    background-size: 173px 25px;
-    width: 173px;
-    height: 25px;
+  #fortana {
+    background: url(../assets/img/logo-fortana-dark.png) no-repeat;
+    background-size: 105px 16px;
+    width: 105px;
+    height: 16px;
     margin-top: 14px;
   }
-  #opi {
-    background: url(../assets/img/opi.png) no-repeat;
-    background-size: 168px 29px;
-    width: 168px;
-    height: 29px;
-    margin-top: 19px;
-  }
-  #tanganica, #reconstruir, #socialtic, #opi {
-    display: inline-block;
+  #parque {
+    background: url(../assets/img/logo-parque-dark.png) no-repeat;
+    background-size: 86px 92px;
+    width: 86px;
+    height: 92px;
+    margin-top: 14px;
   }
 }
 
@@ -49,7 +54,7 @@
 }
 
 #logo-wall {
-  padding: 46px;
+  padding: 38px 0;
   background-color: #F3F5F7;
   position: relative;
   z-index: -2;
@@ -240,7 +245,45 @@ footer {
       padding: 16px 23px 14px 23px;
     }
   }
+  #index {
+    #pienza {
+      background: url(../assets/img/logo-pienza-dark.png) no-repeat;
+      background-size: 119px 25px;
+      width: 119px;
+      height: 25px;
+      margin-top: 4px;
+    }
+    #lago {
+      background: url(../assets/img/logo-lago-dark.png) no-repeat;
+      background-size: 74px 74px;
+      width: 74px;
+      height: 74px;
+      margin-top: 8px;
+    }
+    #reconstruir {
+      background: url(../assets/img/logo-reconstruir-dark.png) no-repeat;
+      background-size: 163px 31px;
+      width: 163px;
+      height: 31px;
+      margin-top: 12px;
+    }
+    #fortana {
+      background: url(../assets/img/logo-fortana-dark.png) no-repeat;
+      background-size: 96px 15px;
+      width: 96px;
+      height: 15px;
+      margin-top: 16px;
+    }
+    #parque {
+      background: url(../assets/img/logo-parque-dark.png) no-repeat;
+      background-size: 79px 84px;
+      width: 79px;
+      height: 84px;
+      margin-top: 12px;
+    }
+  }
   #logo-wall {
+    padding: 44px 0;
     margin-bottom: 41px;
   }
   #feature1, #feature2, #feature3 {
@@ -371,15 +414,46 @@ footer {
       padding: 16px 37px 14px 37px;
     }
   }
-  section#logo-wall {
-    .container.wrap {
-      padding: 0px;
+  #index {
+    #pienza {
+      background: url(../assets/img/logo-pienza-dark.png) no-repeat;
+      background-size: 104px 22px;
+      width: 104px;
+      height: 22px;
+      margin-top:0;
     }
+    #lago {
+      background: url(../assets/img/logo-lago-dark.png) no-repeat;
+      background-size: 65px 65px;
+      width: 65px;
+      height: 65px;
+      margin-top:0;
+    }
+    #reconstruir {
+      background: url(../assets/img/logo-reconstruir-dark.png) no-repeat;
+      background-size: 144px 28px;
+      width: 144px;
+      height: 28px;
+      margin-top: 0;
+    }
+    #fortana {
+      background: url(../assets/img/logo-fortana-dark.png) no-repeat;
+      background-size: 84px 13px;
+      width: 84px;
+      height: 13px;
+      margin-top: 0;
+    }
+    #parque {
+      background: url(../assets/img/logo-parque-dark.png) no-repeat;
+      background-size: 69px 74px;
+      width: 69px;
+      height: 74px;
+      margin-top: 0;
+    }
+  }
+  #logo-wall {
     margin-bottom: 95px;
-    padding: 46px;
-    #tanganica, #reconstruir, #socialtic, #opi {
-      margin-top: 0px;
-    }
+    padding: 36px 0;
   }
   #feature1, #feature2, #feature3 {
     text-align: center;
@@ -515,15 +589,48 @@ footer {
       padding: 16px 31px 14px 31px;
     }
   }
-  section#logo-wall {
-    margin-bottom: 95px;
-    padding: 56px 0;
-    #tanganica, #reconstruir, #socialtic, #opi {
-      display: block;
-      margin: 0 auto;
+  #index {
+    #pienza {
+      background: url(../assets/img/logo-pienza-dark.png) no-repeat;
+      background-size: 104px 22px;
+      width: 104px;
+      height: 22px;
+      margin-top:0;
     }
-    #tanganica, #reconstruir, #socialtic {
-      padding-bottom: 56px;
+    #lago {
+      background: url(../assets/img/logo-lago-dark.png) no-repeat;
+      background-size: 65px 65px;
+      width: 65px;
+      height: 65px;
+      margin-top:0;
+    }
+    #reconstruir {
+      background: url(../assets/img/logo-reconstruir-dark.png) no-repeat;
+      background-size: 144px 28px;
+      width: 144px;
+      height: 28px;
+      margin-top: 0;
+    }
+    #fortana {
+      background: url(../assets/img/logo-fortana-dark.png) no-repeat;
+      background-size: 84px 13px;
+      width: 84px;
+      height: 13px;
+      margin-top: 0;
+    }
+    #parque {
+      background: url(../assets/img/logo-parque-dark.png) no-repeat;
+      background-size: 69px 74px;
+      width: 69px;
+      height: 74px;
+      margin-top: 0;
+    }
+  }
+  #logo-wall {
+    margin-bottom: 95px;
+    padding: 60px 0;
+    #logo-row-2 {
+      margin-top: 52px;
     }
   }
   #feature1, #feature2, #feature3 {

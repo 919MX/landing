@@ -52,6 +52,11 @@ $columns : 12;
   @include flexbox;
 }
 
+.around {
+  @include justify-content(space-around);
+  @include flexbox;
+}
+
 .relative {
   position: relative;
 }
