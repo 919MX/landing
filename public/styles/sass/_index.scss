@@ -8,6 +8,7 @@
     width: 130px;
     height: 27px;
     margin-top: 2px;
+    display: inline-flex;
   }
   #lago {
     background: url(../assets/img/logo-lago-dark.png) no-repeat;
@@ -15,6 +16,7 @@
     width: 81px;
     height: 81px;
     margin-top: 6px;
+    display: inline-flex;
   }
   #reconstruir {
     background: url(../assets/img/logo-reconstruir-dark.png) no-repeat;
@@ -22,6 +24,7 @@
     width: 179px;
     height: 34px;
     margin-top: 13px;
+    display: inline-flex;
   }
   #fortana {
     background: url(../assets/img/logo-fortana-dark.png) no-repeat;
@@ -29,6 +32,7 @@
     width: 105px;
     height: 16px;
     margin-top: 14px;
+    display: inline-flex;
   }
   #parque {
     background: url(../assets/img/logo-parque-dark.png) no-repeat;
@@ -36,6 +40,7 @@
     width: 86px;
     height: 92px;
     margin-top: 14px;
+    display: inline-flex;
   }
 }
 
@@ -58,6 +63,12 @@
   background-color: #F3F5F7;
   position: relative;
   z-index: -2;
+  a span {
+    @include transition(opacity, .15s, linear);
+  }
+  a:hover span {
+    opacity: 0.8;
+  }
 }
 
 #feature1-img {

@@ -57,6 +57,11 @@ $columns : 12;
   @include flexbox;
 }
 
+.between {
+  @include justify-content(space-between);
+  @include flexbox;
+}
+
 .relative {
   position: relative;
 }
