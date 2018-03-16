@@ -298,6 +298,31 @@
 
   </section> -->
 
+  <footer>
+
+    <div class="container wrap">
+
+      <div class="row">
+
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-8 col-xs-4 flex between-lg between-md between-sm middle">
+
+          <span class="xs-hidden" id="address">Fernando Montes de Oca 164, San Miguel Chapultepec, CDMX</span>
+          <div class="nav center-xs">
+            <ul>
+              <li><a href="">Soporte</a></li>
+              <li><a href="/privacidad">Privacidad</a></li>
+              <li><a href="/terminos">Términos<span class="xs-hidden">&nbsp;de uso</span></a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
 </body>
 
 </html>

@@ -1,10 +1,16 @@
-#nosotros header .nav a {
-  color: #000000;
-  opacity: 0.8;
-  @include transition(all, .15s, linear);
-  &:hover {
-    opacity: 1.0;
-    color: #3DC587;
+#nosotros {
+  header .nav a {
+    color: #000000;
+    opacity: 0.8;
+    @include transition(all, .15s, linear);
+    &:hover {
+      opacity: 1.0;
+      color: #3DC587;
+    }
+  }
+  footer {
+    border-top: 1px solid #EDF1F5;
+    margin-top: 0px;
   }
 }
 
