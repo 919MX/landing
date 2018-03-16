@@ -183,7 +183,7 @@
           <span class="xs-hidden" id="address">Fernando Montes de Oca 164, San Miguel Chapultepec, CDMX</span>
           <div class="nav center-xs">
             <ul>
-              <li><a href="">Soporte</a></li>
+              <li><a id="supportLink" href="">Soporte</a></li>
               <li><a href="/privacidad">Privacidad</a></li>
               <li><a href="/terminos">Términos<span class="xs-hidden">&nbsp;de uso</span></a></li>
             </ul>
@@ -196,6 +196,8 @@
     </div>
 
   </footer>
+
+  <script async src="./livechat.js"></script>
 
 </body>
 
