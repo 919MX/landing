@@ -31,10 +31,11 @@
   section a {
     color: #3DC587;
     @include transition(color, .15s, linear);
+    &:hover {
+      color: darken(#3DC587, 15%);
+    }
   }
-  a:hover {
-    color: darken(#3DC587, 15%);
-  }
+  a
   h1 {
     font-size: 54px;
     line-height: 58px;
