@@ -140,6 +140,7 @@
 }
 .between-md {
   @include justify-content(space-between);
+  @include flexbox;
 }
 .first-md {
   @include order(-1);

@@ -92,7 +92,9 @@
   height: 702px;
 }
 
-footer {
+#cta {
+  background-color: #F3F5F7;
+  position: relative;
   #email, #git {
     margin-right: 20px;
     cursor: pointer;
@@ -103,7 +105,7 @@ footer {
   }
 }
 
-#footer-img-wrap {
+#cta-img-wrap {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -111,7 +113,7 @@ footer {
   z-index: 0;
 }
 
-#footer-img {
+#cta-img {
   background: url(../assets/img/footer.jpg) no-repeat left;
   background-size: cover;
 }
@@ -126,7 +128,7 @@ footer {
 // LARGE SCREENS
 @media screen and (min-width: 1400px) {
 
-  #index .nav a {
+  #index header .nav a {
     color: white;
     opacity: 1.0;
     text-shadow: 0 0 20px rgba(0,0,0,0.60);
@@ -198,13 +200,13 @@ footer {
       margin-bottom: 21px;
     }
   }
-  #index footer {
+  #index #cta {
     margin-top: 45px;
     padding: 212px 0 34px 0;
-    #footer-img {
+    #cta-img {
       height: 720px;
     }
-    #footer-img-wrap {
+    #cta-img-wrap {
       width: 50%;
     }
     h2 {
@@ -224,7 +226,7 @@ footer {
 // MEDIUM SCREENS
 @media screen and (max-width: 1399px) and (min-width: 980px) {
 
-  #index .nav a {
+  #index header .nav a {
     color: white;
     opacity: 1.0;
     text-shadow: 0 0 20px rgba(0,0,0,0.60);
@@ -346,13 +348,13 @@ footer {
       margin-bottom: 21px;
     }
   }
-  footer {
+  #cta {
     margin-top: 45px;
     padding: 118px 0 34px 0;
-    #footer-img {
+    #cta-img {
       height: 523px;
     }
-    #footer-img-wrap {
+    #cta-img-wrap {
       width: 50%;
       bottom: 62px;
     }
@@ -373,7 +375,7 @@ footer {
 
 // SMALL SCREENS
 @media screen and (max-width: 979px) and (min-width: 768px) {
-  #index .nav a {
+  #index header .nav a {
     color: #000000;
     opacity: 0.8;
     @include transition(all, .15s, linear);
@@ -518,14 +520,14 @@ footer {
       width: 73%;
     }
   }
-  footer {
+  #cta {
     text-align: center;
     margin-top: 45px;
     padding: 118px 0 34px 0;
-    #footer-img {
+    #cta-img {
       height: 523px;
     }
-    #footer-img-wrap {
+    #cta-img-wrap {
       width: 50%;
       bottom: 82px;
     }
@@ -547,7 +549,7 @@ footer {
 // EXTRA SMALL SCREENS
 @media screen and (max-width: 767px) and (min-width: 0px) {
 
-  #index .nav a {
+  #index header .nav a {
     color: #000000;
     opacity: 0.8;
     @include transition(all, .15s, linear);
@@ -697,13 +699,13 @@ footer {
       margin: 20px 0 10px 0;
     }
   }
-  footer {
+  #cta {
     text-align: center;
     padding: 360px 0 34px 0;
-    #footer-img {
+    #cta-img {
       height: 291px;
     }
-    #footer-img-wrap {
+    #cta-img-wrap {
       width: 100%;
       bottom: 510px;
     }

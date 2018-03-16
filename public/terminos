@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+  <title>Aviso de privacidad - Brigada</title>
+  <meta name="description" content="Grupo Pienza Sostenible A.C. es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+
+  <base href=".">
+
+  <link rel="stylesheet" type="text/css" href="styles/global.css">
+  <link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico"/>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108487748-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-108487748-1');
+  </script>
+
+</head>
+
+<body id="textpage">
+
+  <header>
+
+    <div class="container wrap">
+
+      <div class="row bleed middle navbar">
+
+        <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+          <a id="logo" href="/"><img src="assets/img/logo-brigada.svg" width="90px" height="auto" alt="Logo" /></a>
+        </div>
+
+        <div class="col-lg-10 col-md-10 col-sm-7 col-xs-3">
+          <ul class="nav">
+            <li><a href="/nosotros">Nosotros</a></li>
+            <li><a href="https://app.brigada.mx" class="button white">Entrar</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <section id="privacidad">
+
+    <div class="container wrap">
+
+      <div class="row">
+
+        <div class="col-lg-7 col-lg-offset-2 col-md-7 col-md-offset-2 col-sm-7 col-sm-offset-1 col-xs-4">
+          <h1>Términos de uso</h1>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-5 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-1 col-xs-4">
+          <p>Los usuarios de este Sitio Web son propietarios de todo el contenido y la información que publican en este Sitio Web y pueden controlar su publicación, modificación y eliminación. Asimismo:</p>
+          <ul>
+            <li>En el caso de contenido protegido por derechos de propiedad intelectual, como fotos y videos ("contenido de PI"), nos concedes específicamente el siguiente permiso, de acuerdo con la configuración de la privacidad y de las aplicaciones: nos concedes una licencia no exclusiva, transferible, con derechos de sublicencia, libre de regalías y aplicable en todo el mundo para utilizar cualquier contenido de PI que publiques en este Sitio Web o en conexión con este Sitio Web ("Licencia de PI"). Esta Licencia de PI finaliza cuando eliminas tu contenido de PI o tu cuenta, salvo si el contenido se compartió con terceros y estos no lo eliminaron.</li>
+            <li>Cuando eliminas contenido de PI, este se borra de forma similar a cuando vacías la papelera de reciclaje de tu computadora. No obstante, entiendes que es posible que el contenido eliminado permanezca en copias de seguridad durante un plazo de tiempo razonable (si bien no estará disponible para terceros).</li>
+            <li>Cuando publicas contenido o información, significa que permites que todos, incluidas las personas que son ajenas a este Sitio Web, accedan a dicha información, la utilicen y la asocien a ti (es decir, al nombre de tu organización).</li>
+            <li>Siempre valoramos tus comentarios o sugerencias acerca de este Sitio Web, pero debes entender que podríamos utilizarlos sin obligación de compensarte por ellos (del mismo modo que tú no tienes obligación de proporcionarlos).</li>
+          </ul>
+          <p>Los materiales contenidos en este Sitio Web que no han sido generado por parte de sus usuariosestán protegidos por las leyes de Derechos de Autor y demás Leyes de la Constitución Política de los Estados Unidos Mexicanos. Estas materiales incluyen textos, imágenes, videos, audio, fotografías, logotipos, recomendaciones, estadísticas, diagnósticos, textos y código de programación.</p>
+          <p>El uso, impresión y difusión con fines educativos de imágenes, fragmentos de videos, fragmentos de presentaciones, folletos, calendarios, convocatorias y demás materiales informativos está permitido siempre y cuando, respeten íntegramente el contenido original del material y no se altere en lo más mínimo.</p>
+          <p>Pero si usted edita, modifica reproduce o realiza plagio con cualquiera de nuestros materiales contenidos en este Portal y con fines de lucro, será sancionado por las Autoridades correspondientes y se le juzgará con las leyes relativas de la Constitución Política de los Estados Unidos Mexicanos.</p>
+          <p>Los blogs y foros contenidos en este Sitio Web, se encuentran abiertos a todo público mientras sus comentarios no atenten contra los derechos humanos ni sean violatorios de la ley. Grupo Pienza Sostenible A.C. no se hace responsable por las opiniones que en esos espacios se presentan y no necesariamente comparte las ideas publicadas. Grupo Pienza Sostenible A.C. simplemente ofrece un espacio para que la pluralidad, el buen entendimiento, y las demandas ciudadanas puedan compartirse en un ambiente crítico, sano y responsable.</p>
+          <p>Para evitar el mal uso del foro, directorio y demás espacios de información, todos los participantes deberán estar registrados con nosotros, no se permiten participantes anónimos. Asimismo, se prohíbe incurrir en lenguaje o expresiones que inciten al odio, la discriminación y la violencia. Deben respetarse las creencias, juicios y opiniones de cada uno de los participantes.</p>
+          <p>Grupo Pienza Sostenible A.C. se compromete a respetar la privacidad de cada uno de los usuarios que navegan por su sitio, y toda la información personal recabada para hacerles llegar materiales e información actualizada se encuentra restringida.</p>
+          <p>Para cualquier duda relacionada con los términos y condiciones de uso, por favor contacte a: <a href="mailto:contacto@pienzasostenible.com">contacto@pienzasostenible.com</a>.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div class="container wrap">
+
+      <div class="row">
+
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-8 col-xs-4 flex between-lg between-md between-sm middle">
+
+          <span class="xs-hidden" id="address">Fernando Montes de Oca 164, San Miguel Chapultepec, CDMX</span>
+          <div class="nav center-xs">
+            <ul>
+              <li><a href="">Soporte</a></li>
+              <li><a href="/privacidad">Privacidad</a></li>
+              <li><a href="/terminos">Términos<span class="xs-hidden">&nbsp;de uso</span></a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

@@ -23,6 +23,15 @@ h2 {
   color: $grey-7;
 }
 
+h3 {
+  @include roboto-500;
+  @include font-smoothing(antialiased);
+  font-size: 18px;
+  color: $grey-7;
+  letter-spacing: 0.22px;
+  line-height: 28px;
+}
+
 a {
   text-decoration: none;
 }

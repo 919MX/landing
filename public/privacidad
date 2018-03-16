@@ -45,17 +45,157 @@
 
       </div>
 
+    </div>
+
+  </header>
+
+  <section id="privacidad">
+
+    <div class="container wrap">
+
       <div class="row">
 
-        <div class="col-lg-7 col-lg-offset-2 col-md-7 col-md-offset-1 col-sm-7 col-sm-offset-1 col-xs-4">
+        <div class="col-lg-7 col-lg-offset-2 col-md-7 col-md-offset-2 col-sm-7 col-sm-offset-1 col-xs-4">
           <h1>Aviso de privacidad</h1>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-5 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-1 col-xs-4">
+          <p>Con fundamento en lo establecido en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, mediante la cual se obliga a los particulares, sean personas físicas o morales de carácter privado, que lleven a cabo el tratamiento de datos personales, ponemos a su disposición los avisos de privacidad correspondientes, a efecto de garantizar la privacidad y el derecho a la autodeterminación informativa de las personas que nos proporcionan datos personales.  </p>
+          <p>Para mayor información visita <a href="http://www.inai.org.mx" target="_blank">www.inai.org.mx</a>.</p>
+          <h3>Registros</h3>
+          <p>Grupo Pienza Sostenible A.C., es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección.</p>
+          <p>Los datos personales y datos personales sensibles que voluntariamente proporcione a Grupo Pienza Sostenible A.C. serán utilizados para identificarlo, localizarlo y contactarlo; registro en base de datos de personas adherentes y simpatizantes, intercambio de información, invitación a redes sociales; así como cualquier otra finalidad análoga a las aquí establecidas, y estarán protegidos por medidas de seguridad administrativas, técnicas y físicas, para evitar su daño, pérdida, alteración, destrucción, uso, acceso o divulgación indebida.</p>
+          <p>Usted tiene derecho de acceder, rectificar y cancelar sus datos personales, así como de oponerse al tratamiento de los mismos o revocar el consentimiento que para tal fin nos haya otorgado, a través de los procedimientos que hemos implementado.</p>
+          <p>Asimismo, le informamos que sus datos personales y datos personales sensibles pueden ser transferidos y tratados dentro y fuera del país, por personas distintas a esta Institución. Si usted no manifiesta su oposición para que sus datos personales y datos personales sensibles sean transferidos, se entenderá que ha otorgado su consentimiento para ello.</p>
+          <p>Cualquier modificación a este aviso de privacidad podrá consultarla en nuestra página de Internet <a href="http://brigada.mx/privacidad">brigada.mx/privacidad</a>, o se puede poner en contacto con nuestro responsable de datos personales al correo electrónico <a href="mailto:contacto@pienzasostenible.com">contacto@pienzasostenible.com</a>.</p>
+          <h3>Directorio de organizaciones</h3>
+          <p>Los datos personales proporcionados por usted serán utilizados por Grupo Pienza Sostenible A.C., lo cual recabará, mediante formularios web, llamadas telefónicas, correo electrónico y de manera personal, y tratará la siguiente información:</p>
+          <ul>
+            <li><span class="bold">Datos de identificación:</span> Nombre(s) y apellidos</li>
+            <li><span class="bold">Datos de contacto:</span> Teléfono, correo electrónico y redes sociales (Facebook, Twitter, Youtube, Instagram, entre otros)</li>
+            <li><span class="bold">Domicilio completo:</span> Calle, número exterior, número interior, localidad, municipio, entidad, país y código postal</li>
+            <li><span class="bold">Datos de la comunidad, localidad, región o cualquier otro</span> que permita ubicar físicamente el sitio donde se realiza el proyecto que se registra en el directorio</li>
+            <li><span class="bold">Datos de las personas involucradas en el proyecto,</span> siempre y cuando esta información sea de carácter público o provenga de una fuente pública</li>
+            <li><span class="bold">La imagen y voz de las personas involucradas en el proyecto,</span> siempre y cuando esta información sea de carácter público o provenga de una fuente pública</li>
+          </ul>
+          <h3>Finalidades primarias</h3>
+          <p>Grupo Pienza Sostenible A.C. tratará sus datos personales para realizar todas las actividades necesarias para:</p>
+          <ul>
+            <li>Localizarlo, por vía telefónica, correo electrónico, redes sociales o entrevista personal</li>
+            <li>Darle seguimiento personalizado a las iniciativas, orientaciones y proyectos que Usted haya registrado que realiza, en relación a la comunidad a la que Usted pertenezca o de la cual tenga conocimiento, o algún interés legítimo en que sea subsanada</li>
+            <li>Ponerlo en contacto con autoridades administrativas y con medios de comunicación para que se busque la mejor difusión a la iniciativa o proyecto registrado</li>
+          </ul>
+          <p>En caso que Grupo Pienza Sostenible A.C. lo considere necesario, hacer del conocimiento público la información que Usted nos haya dado a conocer; mediante la difusión del caso o evidencias del proyecto o iniciativa en medios impresos, audiovisuales, cinematográficos, internet, redes sociales, o por cualquier otro medio que considere necesario.</p>
+          <h3>Finalidades secundarias</h3>
+          <p>Si usted no se opone, Grupo Pienza Sostenible A.C. conservará su información para convocarlo a pertenecer a nuestras iniciativas, a nuestros canales y medios de información y comunicación y para posibles contactos posteriores que pudieran ser de interés para cualquiera de las partes. Si usted no desea que Grupo Pienza Sostenible A.C. trate su información para finalidades secundarias, favor de enviar un correo electrónico a: <a href="mailto:contacto@pienzasostenible.com">contacto@pienzasostenible.com</a></p>
+          <h3>Transferencias</h3>
+          <p>Grupo Pienza Sostenible A.C. para cumplir la(s) finalidad(es) necesarias anteriormente descrita(s) u otras aquellas exigidas legalmente o por las autoridades competentes, sólo transferirá los datos necesarios en los casos legalmente previstos.</p>
+          <h3>Medio para ejercer Derechos ARCO y Revocación del Consentimiento:</h3>
+          <p>Usted o su representante legal podrá ejercer cualquiera de los derechos de acceso, rectificación, cancelación u oposición (en lo sucesivo “derechos ARCO”), así como revocar su consentimiento para el tratamiento de sus datos personales enviando un correo electrónico al Comité de Privacidad de Grupo Pienza Sostenible A.C. a la dirección electrónica <a href="mailto:contacto@pienzasostenible.com">contacto@pienzasostenible.com</a></p>
+          <p>Su petición deberá ser realizada a través de la Solicitud para ejercer derechos ARCO elaborada por Grupo Pienza Sostenible A.C. que se encuentra a su disposición en esta página web y que contiene todos los elementos para poder atender su solicitud conforme a la normatividad. Para que el comité de privacidad de Grupo Pienza Sostenible A.C. pueda darle seguimiento a su solicitud, usted o su representante legal, deberá acreditar correctamente su identidad, para lo que es necesario que complete todos los campos indicados en la Solicitud y lo acompañe con copia de alguna de las identificaciones oficiales vigentes que se señalan en el mismo.</p>
+          <p>En caso de que la información proporcionada en la solicitud sea errónea o insuficiente, o bien, no se acompañen los documentos de acreditación correspondientes, el Comité de Privacidad, dentro de los cinco (5) días hábiles siguientes a la recepción de la solicitud, podrá requerirle que aporte los elementos o documentos necesarios para dar trámite a la misma. Usted contará con diez (10) días hábiles para atender el requerimiento, contados a partir del día siguiente en que lo haya recibido. De no dar respuesta en dicho plazo, se tendrá por no presentada la solicitud correspondiente.</p>
+          <p>El comité de privacidad le comunicará la determinación adoptada, en un plazo máximo de veinte (20) días hábiles contados desde la fecha en que se recibió la solicitud, a efecto de que, si resulta procedente, haga efectiva la misma dentro de los quince (15) días hábiles siguientes a que se comunique la respuesta. La respuesta se dará vía electrónica a la dirección de correo que se especifique en la solicitud.</p>
+          <h3>Limitación de sus datos personales</h3>
+          <p>Usted podrá limitar el uso o divulgación de sus datos personales enviando su solicitud al comité de privacidad de Grupo Pienza Sostenible A.C. a la dirección <a href="mailto:contacto@pienzasostenible.com">contacto@pienzasostenible.com</a>.</p>
+          <p>Los requisitos para acreditar su identidad, así como el procedimiento para atender su solicitud se regirán por los mismos criterios señalados en el apartado anterior. En caso de que su solicitud resulte procedente, Grupo Pienza Sostenible A.C. lo registrará en el listado de exclusión correspondiente.</p>
+          <h3>Cambios al aviso de privacidad</h3>
+          <p>Cualquier cambio o modificación al presente aviso podrá efectuarse por  >>>>>>>AC<<<<<<<<<<  en cualquier momento y se dará a conocer a través de su portal  >>>>>>>sitio web<<<<<<<<<<  y/o a través de medios impresos de circulación nacional.</p>
+          <p>Fecha última actualización 15/03/2018</p>
+          <h3>Formato para Solicitar Derechos ARCO</h3>
+          <p>La presente solicitud está diseñada para atender en tiempo, forma y fondo el ejercicio de sus derechos ARCO previstos por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (en adelante “LFPDPPP”).</p>
+          <p>Le recordamos que los derechos ARCO sólo pueden ser ejercidos por el titular o su representante legal previa acreditación de su identidad, razón por la cual a la presente solicitud debe acompañarse una identificación oficial.</p>
+          <p>Asimismo, le informamos que para que su solicitud proceda es indispensable completar toda la información solicitada en la presente, la cual será utilizada para acreditar su identidad, tal y como se señala en los artículos 32, 34 y 35 de la LFPDPPP.</p>
+          <p><span class="bold">Datos del titular:</span></p>
+          <ul>
+            <li>Nombre(s)</li>
+            <li>Apellidos</li>
+            <li>Fecha de nacimiento</li>
+            <li>RFC</li>
+            <li>Calle de domicilio</li>
+            <li>Número exterior</li>
+            <li>Número interior</li>
+            <li>Municipio</li>
+            <li>Entidad</li>
+            <li>Correo electrónico</li>
+            <li>Número de teléfono</li>
+            <li>Identificación oficial</li>
+          </ul>
+          <p><span class="bold">Información del representante (cuando aplique):</span></p>
+          <ul>
+            <li>Nombre(s)</li>
+            <li>Apellidos</li>
+            <li>Instrumento público</li>
+            <li>Carta poder</li>
+          </ul>
+          <p><span class="bold">Solicitud de derechos ARCO:</span></p>
+          <p>Marque el derecho(s) que desea ejercer:</p>
+          <ul>
+            <li>Acceso</li>
+            <li>Rectificación</li>
+            <li>Cancelación</li>
+            <li>Oposición</li>
+            <li>Revocación del consentimiento</li>
+          </ul>
+          <p>Si usted desea limitar el uso y/o divulgación de sus datos, favor de precisar la finalidad secundaria o, en su caso la transferencia deseada.</p>
+          <p><span class="bold">Especificaciones:</span></p>
+          <p>Hacer una descripción los datos personales respecto de los que se busca ejercer el/los derecho(s) señalados anteriormente. Puntualmente, para la solicitud de rectificación de datos personales, favor de acompañar la documentación que sustente dicho cambio.</p>
+          <table>
+            <tbody>
+              <tr>
+                <th>Dato incorrecto</th>
+                <th>Dato correcto</th>
+                <th>Documento acreditativo</th>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><span class="bold">Aviso:</span></p>
+          <p>Los datos personales que proporciona en la presente solicitud serán tratados por Grupo Pienza Sostenible A.C., para realizar todas las actividades necesarias para atender su ejercicio de derechos ARCO. Una vez terminado el ejercicio correspondiente, Grupo Pienza Sostenible A.C. procederá a la cancelación de sus datos, mediante el bloqueo y posterior eliminación de dicha información conforme a las disposiciones legales correspondientes.</p>
         </div>
 
       </div>
 
     </div>
 
-  </header>
+  </section>
+
+  <footer>
+
+    <div class="container wrap">
+
+      <div class="row">
+
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-8 col-xs-4 flex between-lg between-md between-sm middle">
+
+          <span class="xs-hidden" id="address">Fernando Montes de Oca 164, San Miguel Chapultepec, CDMX</span>
+          <div class="nav center-xs">
+            <ul>
+              <li><a href="">Soporte</a></li>
+              <li><a href="/privacidad">Privacidad</a></li>
+              <li><a href="/terminos">Términos<span class="xs-hidden">&nbsp;de uso</span></a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 
