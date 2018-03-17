@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+  <title>Error 404 - Brigada</title>
+  <meta name="description" content="Error 404">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+
+  <link rel="stylesheet" type="text/css" href="styles/global.css">
+  <link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico"/>
+
+</head>
+
+<body id="error">
+
+  <header>
+
+    <div class="container wrap">
+
+      <div class="row bleed middle">
+
+        <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+          <a id="logo" href="/"><img src="assets/img/logo-brigada.svg" width="90px" height="auto" alt="Logo" /></a>
+        </div>
+
+        <div class="col-lg-10 col-md-10 col-sm-7 col-xs-3">
+          <ul class="nav">
+            <li><a href="/nosotros">Nosotros</a></li>
+            <li><a href="https://app.brigada.mx" class="button white">Entrar</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <section>
+    <h1>Error 404</h1>
+    <p>La pagina que buscas no existe.</p>
+    <p>¿Quieres ir al sitio de Brigada?</p>
+    <a href="/" class="button solid-green">Llévame</a>
+  </section>
+
+</body>
+
+</html>
