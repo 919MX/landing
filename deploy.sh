@@ -3,7 +3,7 @@
 bucketname='brigada.mx'
 
 aws s3 cp public/index.html s3://${bucketname} --acl public-read
-aws s3 cp public/error s3://${bucketname} --acl public-read
+aws s3 cp public/error s3://${bucketname} --acl public-read --content-type "text/html"
 aws s3 cp public/nosotros s3://${bucketname} --acl public-read --content-type "text/html"
 aws s3 cp public/privacidad s3://${bucketname} --acl public-read --content-type "text/html"
 aws s3 cp public/terminos s3://${bucketname} --acl public-read --content-type "text/html"
