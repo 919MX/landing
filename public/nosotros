@@ -218,7 +218,7 @@
           <span class="xs-hidden" id="address">eduardo@brigada.mx</span>
           <div class="nav center-xs">
             <ul>
-              <li><a id="supportLink" href="">Soporte</a></li>
+              <li><a id="supportLink" href="https://app.brigada.mx?_mn=support">Soporte</a></li>
               <li><a href="/privacidad">Privacidad</a></li>
               <li><a href="/terminos">Términos<span class="xs-hidden">&nbsp;de uso</span></a></li>
             </ul>
@@ -232,7 +232,7 @@
 
   </footer>
 
-  <script async src="./livechat.js"></script>
+  <!-- <script async src="./livechat.js"></script> -->
 
 </body>
 
