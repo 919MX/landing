@@ -1,5 +1,7 @@
 # `aws` command depends on credentials in `~/.aws` directory
 ./build.sh
+./data.sh
+
 bucketname='brigada.mx'
 
 aws s3 cp public/index.html s3://${bucketname} --acl public-read

@@ -1,2 +1,5 @@
 styles/*.css
 node_modules/
+
+# sandbox
+sandbox/
