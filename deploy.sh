@@ -1,3 +1,5 @@
+set -e
+
 # `aws` command depends on credentials in `~/.aws` directory
 ./build.sh
 ./data.sh
