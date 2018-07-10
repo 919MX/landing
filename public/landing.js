@@ -12,6 +12,14 @@ const fmtBudget = (b) => { // round to 1 or 0 decimal places
   return `$${thousands}K`
 }
 
+const scrollIntoView = (el, options) => {
+  if (typeof el.scrollIntoView === 'function') {
+    el.scrollIntoView(options)
+    return true
+  }
+  return false
+}
+
 const dayOfYear = () => {
   const now = new Date()
   const start = new Date(now.getFullYear(), 0, 0)
@@ -209,6 +217,12 @@ const render = (data) => {
   renderMetrics(metrics)
   renderActions(actions)
   renderOpportunities(opportunities)
+
+  const _cta = document.getElementById('cta')
+  const _joinButton = document.getElementById('join-button')
+  _joinButton.addEventListener('click', (e) => {
+    if (scrollIntoView(_cta, { behavior: 'smooth' })) e.preventDefault()
+  }, false)
 }
 
 // fetch('http://brigada.mx/landing_data.json')
@@ -216,3 +230,4 @@ fetch('http://localhost:8000/api/landing/')
   .then(r => r.json())
   .catch(e => renderError(e))
   .then(data => render(data))
+
