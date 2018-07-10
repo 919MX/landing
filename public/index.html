@@ -25,6 +25,8 @@
   <!-- <script defer src="./livechat.js"></script> -->
 
   <script src="./landing.js"></script>
+  <script async src="https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css" rel="stylesheet" />
 
 </head>
 
@@ -111,6 +113,12 @@
 
   <section id="feature1">
 
+    <div>
+      <h2>Al compartir información, nos coordinamos mejor</h2>
+      <p>Publicamos nuestros proyectos para no trabajar doble.</p>
+      <a href="https://app.brigada.mx/reconstructores" class="button solid-green small sm-hidden">Ver los proyectos</a>
+    </div>
+
     <div id="brigada-actions" class="container wrap nowrap-xs"></div>
     <!-- <div class="container wrap nowrap-xs">
 
@@ -131,6 +139,12 @@
   </section>
 
   <section id="feature2">
+
+    <div>
+      <h2>Al construir confianza, atraemos voluntarios</h2>
+      <p>Buscamos voluntarios para nuestros proyectos mas transparentes.</p>
+      <a href="https://app.brigada.mx/voluntarios" class="button solid-green small sm-hidden">Ver los puestos</a>
+    </div>
 
     <div id="brigada-opportunities" class="container wrap nowrap-xs"></div>
     <!-- <div class="container wrap nowrap-xs">
@@ -155,7 +169,14 @@
 
   <section id="feature3">
 
-    <div class="container wrap nowrap-sm nowrap-xs">
+    <div>
+      <h2 id="brigada-communities-header">Al dia de hoy, estamos en _ comunidades</h2>
+      <p>Nos enfocamos en lugares de alto daño y carencia social.</p>
+      <a href="https://app.brigada.mx" class="button solid-green small sm-hidden">Ver todas los comunidades dañadas</a>
+    </div>
+
+    <div id="brigada-communities" class="container"></div>
+    <!-- <div class="container wrap nowrap-sm nowrap-xs">
 
       <div class="row middle bleed-sm">
 
@@ -171,7 +192,7 @@
 
       </div>
 
-    </div>
+    </div> -->
 
   </section>
 

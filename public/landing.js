@@ -102,6 +102,11 @@ const renderMetrics = ({ groups, actions, total_spent: spent }) => {
   _p.innerHTML = metricsStr
 }
 
+const renderCommunitiesHeader = ({ results }) => {
+  const _h = document.getElementById('brigada-communities-header')
+  _h.innerHTML = `Al dia de hoy, estamos en ${results.length} comunidades`
+}
+
 const renderActions = ({ results }) => {
   const _container = document.getElementById('brigada-actions')
 
@@ -231,6 +236,8 @@ const renderOpportunities = ({ results }) => {
 const render = (data) => {
   const { metrics, actions, opportunities, localities } = data
   renderMetrics(metrics)
+  renderCommunitiesHeader(localities)
+
   renderActions(actions)
   renderOpportunities(opportunities)
 
