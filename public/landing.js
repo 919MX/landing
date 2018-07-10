@@ -102,6 +102,11 @@ const renderMetrics = ({ groups, actions, total_spent: spent }) => {
   _p.innerHTML = metricsStr
 }
 
+const renderCommunitiesHeader = ({ results }) => {
+  const _h = document.getElementById('brigada-communities-header')
+  _h.innerHTML = `Al dia de hoy, estamos en ${results.length} comunidades`
+}
+
 const renderActions = ({ results }) => {
   const _container = document.getElementById('brigada-actions')
 
@@ -228,22 +233,33 @@ const renderOpportunities = ({ results }) => {
   _container.innerHTML = markup.join('')
 }
 
+const renderMap = ({ results }) => {
+  console.log(results)
+}
+
 const render = (data) => {
   const { metrics, actions, opportunities, localities } = data
   renderMetrics(metrics)
+  renderCommunitiesHeader(localities)
+
   renderActions(actions)
   renderOpportunities(opportunities)
 
+  renderMap(localities)
+}
+
+const main = () => {
   const _cta = document.getElementById('cta')
   const _joinButton = document.getElementById('join-button')
   _joinButton.addEventListener('click', (e) => {
     if (scrollIntoView(_cta, { behavior: 'smooth' })) e.preventDefault()
   }, false)
+
+  // fetch('http://brigada.mx/landing_data.json')
+  fetch('http://localhost:8000/api/landing/')
+    .then(r => r.json())
+    .catch(e => renderError(e))
+    .then(data => render(data))
 }
 
-// fetch('http://brigada.mx/landing_data.json')
-fetch('http://localhost:8000/api/landing/')
-  .then(r => r.json())
-  .catch(e => renderError(e))
-  .then(data => render(data))
-
+document.addEventListener('DOMContentLoaded', main)
