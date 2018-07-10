@@ -12,6 +12,18 @@ const fmtBudget = (b) => { // round to 1 or 0 decimal places
   return `$${thousands}K`
 }
 
+const dayOfYear = () => {
+  const now = new Date()
+  const start = new Date(now.getFullYear(), 0, 0)
+  return Math.floor((now - start) / (1000 * 60 * 60 * 24))
+}
+
+const rotatingHashFromUs = (us, rotationDays = 3) => {
+  const multiplier = Math.floor(dayOfYear() / rotationDays)
+  const _us = us % 10 === 0 ? us + 3 : us
+  return _us * (1 + multiplier) % 10000
+}
+
 const pluralize = (str) => {
   let plural
 
@@ -71,7 +83,14 @@ const renderMetrics = ({ groups, actions, total_spent: spent }) => {
 
 const renderActions = ({ results }) => {
   const _container = document.getElementById('brigada-actions')
-  const actions = results.slice(0, 3).map((a) => {
+
+  const actions = results.filter((a) => {
+    const { preview: { src } } = a
+    if (!src) return false
+    return true
+  }).sort((a, b) => rotatingHashFromUs(a.microseconds) - rotatingHashFromUs(b.microseconds))
+
+  const markup = actions.slice(0, 3).map((a) => {
     const {
       id,
       organization: { name: orgName },
@@ -83,19 +102,27 @@ const renderActions = ({ results }) => {
     } = a
     const q = type === 'video' ? `?_mn=testimonial&_ms=${testimonialOrSubmissionId}` : ''
 
-    return `<div class="action-container">
+    return `<div class="card-container">
       <a class="${type}" href="https://app.brigada.mx/proyectos/${id}${q}" style="background-image: url('${src}')"></a>
       <div class="card-text">
         <b>${orgName}</b> realiza ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} en ${locName}, ${stateName} por ${fmtBudget(budget)}.
       </div>
     </div>`
   })
-  _container.innerHTML = actions.join('')
+
+  _container.innerHTML = markup.join('')
 }
 
 const renderOpportunities = ({ results }) => {
   const _container = document.getElementById('brigada-opportunities')
-  const opportunities = results.slice(0, 3).map((o) => {
+
+  const opportunities = results.filter((o) => {
+    const { preview: { src } } = o
+    if (!src) return false
+    return true
+  }).sort((a, b) => rotatingHashFromUs(a.microseconds) - rotatingHashFromUs(b.microseconds))
+
+  const markup = opportunities.slice(0, 3).map((o) => {
     const {
       id,
       action: { organization: { name: orgName }, locality: { name: locName, state_name: stateName } },
@@ -105,14 +132,15 @@ const renderOpportunities = ({ results }) => {
     } = o
     const q = type === 'video' ? `?_mn=testimonial&_ms=${testimonialOrSubmissionId}` : ''
 
-    return `<div class="action-container">
+    return `<div class="card-container">
       <a class="${type}" href="https://app.brigada.mx/voluntariado/${id}${q}" style="background-image: url('${src}')"></a>
       <div class="card-text">
         <b>${orgName}</b> busca ${target} ${target !== 1 ? pluralize(position.toLowerCase()) : position.toLowerCase()} en ${locName}, ${stateName}.
       </div>
     </div>`
   })
-  _container.innerHTML = opportunities.join('')
+
+  _container.innerHTML = markup.join('')
 }
 
 const render = (data) => {
@@ -122,7 +150,8 @@ const render = (data) => {
   renderOpportunities(opportunities)
 }
 
-fetch('http://brigada.mx/landing_data.json')
+// fetch('http://brigada.mx/landing_data.json')
+fetch('http://localhost:8000/api/landing/')
   .then(r => r.json())
   .catch(e => renderError(e))
   .then(data => render(data))
