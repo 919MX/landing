@@ -18,10 +18,23 @@ const dayOfYear = () => {
   return Math.floor((now - start) / (1000 * 60 * 60 * 24))
 }
 
-const rotatingHashFromUs = (us, rotationDays = 3) => {
-  const multiplier = Math.floor(dayOfYear() / rotationDays)
-  const _us = us % 10 === 0 ? us + 3 : us
-  return _us * (1 + multiplier) % 10000
+const hash = (n) => {
+  const s = String(n * 1000000)
+  let hash = 0
+  if (s.length == 0) {
+    return hash
+  }
+  for (let i = 0; i < s.length; i++) {
+    const char = s.charCodeAt(i)
+    hash = ((hash<<5)-hash)+char
+    hash = hash & hash // Convert to 32bit integer
+  }
+  const _hash = hash % 10000
+  return Math.sign(_hash) * _hash
+}
+
+const rotatingHash = (n, days = 3) => {
+  return hash(n + Math.floor(dayOfYear() / days))
 }
 
 const pluralize = (str) => {
@@ -84,13 +97,37 @@ const renderMetrics = ({ groups, actions, total_spent: spent }) => {
 const renderActions = ({ results }) => {
   const _container = document.getElementById('brigada-actions')
 
+  const firstThree = (items) => {
+    const _items = []
+
+    for (const o of items) {
+      if (_items.length === 0) {
+        _items.push(o)
+        continue
+      }
+      if (_items.length === 1 && _items[0].organization.id !== o.organization.id) {
+        _items.push(o)
+        continue
+      }
+      if (_items.length === 2 && _items[0].organization.id !== o.organization.id &&
+        _items[1].organization.id !== o.organization.id) {
+        _items.push(o)
+        break
+      }
+    }
+
+    if (_items.length === 1 && items.length > 1) _items.push(items[items.length - 1])
+    if (_items.length === 2 && items.length > 2) _items.push(items[items.length - 2])
+    return _items
+  }
+
   const actions = results.filter((a) => {
     const { preview: { src } } = a
     if (!src) return false
     return true
-  }).sort((a, b) => rotatingHashFromUs(a.microseconds) - rotatingHashFromUs(b.microseconds))
+  }).sort((a, b) => rotatingHash(a.id) - rotatingHash(b.id))
 
-  const markup = actions.slice(0, 3).map((a) => {
+  const markup = firstThree(actions).map((a) => {
     const {
       id,
       organization: { name: orgName },
@@ -116,13 +153,37 @@ const renderActions = ({ results }) => {
 const renderOpportunities = ({ results }) => {
   const _container = document.getElementById('brigada-opportunities')
 
+  const firstThree = (items) => {
+    const _items = []
+
+    for (const o of items) {
+      if (_items.length === 0) {
+        _items.push(o)
+        continue
+      }
+      if (_items.length === 1 && _items[0].action.organization.id !== o.action.organization.id) {
+        _items.push(o)
+        continue
+      }
+      if (_items.length === 2 && _items[0].action.organization.id !== o.action.organization.id &&
+        _items[1].action.organization.id !== o.action.organization.id) {
+        _items.push(o)
+        break
+      }
+    }
+
+    if (_items.length === 1 && items.length > 1) _items.push(items[items.length - 1])
+    if (_items.length === 2 && items.length > 2) _items.push(items[items.length - 2])
+    return _items
+  }
+
   const opportunities = results.filter((o) => {
     const { preview: { src } } = o
     if (!src) return false
     return true
-  }).sort((a, b) => rotatingHashFromUs(a.microseconds) - rotatingHashFromUs(b.microseconds))
+  }).sort((a, b) => rotatingHash(a.id) - rotatingHash(b.id))
 
-  const markup = opportunities.slice(0, 3).map((o) => {
+  const markup = firstThree(opportunities).map((o) => {
     const {
       id,
       action: { organization: { name: orgName }, locality: { name: locName, state_name: stateName } },
