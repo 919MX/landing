@@ -108,24 +108,31 @@ const renderActions = ({ results }) => {
   const firstThree = (items) => {
     const _items = []
 
-    for (const o of items) {
+    for (const item of items) {
       if (_items.length === 0) {
-        _items.push(o)
+        _items.push(item)
         continue
       }
-      if (_items.length === 1 && _items[0].organization.id !== o.organization.id) {
-        _items.push(o)
+      if (_items.length === 1 && _items[0].organization.id !== item.organization.id) {
+        _items.push(item)
         continue
       }
-      if (_items.length === 2 && _items[0].organization.id !== o.organization.id &&
-        _items[1].organization.id !== o.organization.id) {
-        _items.push(o)
+      if (_items.length === 2 && _items[0].organization.id !== item.organization.id &&
+        _items[1].organization.id !== item.organization.id) {
+        _items.push(item)
         break
       }
     }
 
     if (_items.length === 1 && items.length > 1) _items.push(items[items.length - 1])
     if (_items.length === 2 && items.length > 2) _items.push(items[items.length - 2])
+
+    const idx = _items.findIndex(v => v.donations.length > 0) // puts an action with donations in the middle
+    if (idx >= 0 && _items.length > 1) {
+      const temp = _items[idx]
+      _items[idx] = _items[1]
+      _items[1] = temp
+    }
     return _items
   }
 
@@ -135,7 +142,7 @@ const renderActions = ({ results }) => {
     return true
   }).sort((a, b) => rotatingHash(a.id) - rotatingHash(b.id))
 
-  const markup = firstThree(actions).map((a) => {
+  const markup = firstThree(actions).map((a, i) => {
     const {
       id,
       organization: { name: orgName },
@@ -144,13 +151,22 @@ const renderActions = ({ results }) => {
       unit_of_measurement: unit,
       budget,
       preview: { type, src, id: testimonialOrSubmissionId },
+      donations,
     } = a
     const q = type === 'video' ? `?_mn=testimonial&_ms=${testimonialOrSubmissionId}` : ''
+
+    let labelText
+    if (i === 1 && donations.length > 0) {
+      const { donor: { name: donorName }, amount } = donations[0]
+      labelText = `<span class="strongText">${donorName}</span> invierte ${fmtBudget(amount)} en ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} para ${locName}, ${stateName}.`
+    } else {
+      labelText = `<span class="strongText">${orgName}</span> realiza ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} en ${locName}, ${stateName} por ${fmtBudget(budget)}.`
+    }
 
     return `<div class="card-container">
       <a class="${type}" href="https://app.brigada.mx/proyectos/${id}${q}" style="background-image: url('${src}')"></a>
       <div class="card-text">
-        <b>${orgName}</b> realiza ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} en ${locName}, ${stateName} por ${fmtBudget(budget)}.
+        ${labelText}
       </div>
     </div>`
   })
@@ -164,18 +180,18 @@ const renderOpportunities = ({ results }) => {
   const firstThree = (items) => {
     const _items = []
 
-    for (const o of items) {
+    for (const item of items) {
       if (_items.length === 0) {
-        _items.push(o)
+        _items.push(item)
         continue
       }
-      if (_items.length === 1 && _items[0].action.organization.id !== o.action.organization.id) {
-        _items.push(o)
+      if (_items.length === 1 && _items[0].action.organization.id !== item.action.organization.id) {
+        _items.push(item)
         continue
       }
-      if (_items.length === 2 && _items[0].action.organization.id !== o.action.organization.id &&
-        _items[1].action.organization.id !== o.action.organization.id) {
-        _items.push(o)
+      if (_items.length === 2 && _items[0].action.organization.id !== item.action.organization.id &&
+        _items[1].action.organization.id !== item.action.organization.id) {
+        _items.push(item)
         break
       }
     }
@@ -204,7 +220,7 @@ const renderOpportunities = ({ results }) => {
     return `<div class="card-container">
       <a class="${type}" href="https://app.brigada.mx/voluntariado/${id}${q}" style="background-image: url('${src}')"></a>
       <div class="card-text">
-        <b>${orgName}</b> busca ${target} ${target !== 1 ? pluralize(position.toLowerCase()) : position.toLowerCase()} en ${locName}, ${stateName}.
+        <span class="strongText">${orgName}</span> busca ${target} ${target !== 1 ? pluralize(position.toLowerCase()) : position.toLowerCase()} en ${locName}, ${stateName}.
       </div>
     </div>`
   })
