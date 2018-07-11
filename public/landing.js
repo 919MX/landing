@@ -258,7 +258,7 @@ const renderMap = (localities) => {
   map.scrollZoom.disable()
 
   // creates a popup, but doesn't add it to map yet
-  const popup = new mapboxgl.Popup({ closeButton: false })
+  const popup = new mapboxgl.Popup({ closeButton: false, offset: 12 })
 
   const dmgGrade = (locality) => {
     const levels = [

@@ -1,0 +1,13 @@
+#brigada-map {
+  margin-left: 5%;
+  width: 90%;
+  height: 500px;
+  position: relative;
+}
+
+#brigada-map-legend {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  z-index: 2;
+}
