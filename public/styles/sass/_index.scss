@@ -2,6 +2,19 @@
   header {
     height: calc(100vh + 60px);
   }
+  #brigada-opportunities {
+    max-width: 100%;
+  }
+  .card-container {
+    display: inline-flex;
+    flex-direction: column;
+    width: 30%;
+    cursor: pointer;
+    @include transition(opacity, .15s, linear);
+  }
+  .card-container:hover {
+    opacity: 0.8;
+  }
   #pienza {
     background: url(../assets/img/logo-pienza-dark.png) no-repeat;
     background-size: 130px 27px;
@@ -165,16 +178,9 @@
     }
   }
   #feature1 {
-    h2 {
-      margin-bottom: 10px;
-      width: 330px;
-    }
+
   }
   #feature2 {
-    margin-top: -81px;
-    h2 {
-      margin-bottom: 10px;
-    }
     #feature2-img {
       margin-left: -10%;
     }
@@ -188,14 +194,8 @@
       align-self: center;
       z-index: -1;
     }
-    h2 {
-      margin-bottom: 10px;
-    }
   }
   #feature2, #feature3 {
-    h2 {
-      width: 330px;
-    }
     p {
       margin-bottom: 21px;
     }
@@ -208,9 +208,6 @@
     }
     #cta-img-wrap {
       width: 50%;
-    }
-    h2 {
-      margin-bottom: 21px;
     }
     p {
       margin-bottom: 27px;

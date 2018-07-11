@@ -5,6 +5,10 @@
     padding-right: 20px;
   }
 
+  .gutter-sm {
+    padding-right: 0 !important;
+  }
+
   .bleed-sm > div:last-child {
     padding-right: 0;
   }
