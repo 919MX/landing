@@ -33,7 +33,18 @@ h3 {
 }
 
 a {
+  @include nunito-sans-700;
+  @include font-smoothing(antialiased);
   text-decoration: none;
+  font-size: 13px;
+  color: #3DC59F;
+  letter-spacing: 0.35px;
+  line-height: 16px;
+  @include transition(color, .15s, linear);
+}
+
+a:hover {
+  color: #13A68C;
 }
 
 .tag {
@@ -45,9 +56,21 @@ a {
 
 a.button, header#beta li {
   @include nunito-sans-800;
-  font-size: 11px;
+  @include font-smoothing(antialiased);
+  font-size: 13px;
   line-height: 16px;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.35px;
   text-align: center;
-  text-transform: uppercase;
+}
+
+.card-text {
+  @include work-sans-300;
+  font-size: 16px;
+  color: #141418;
+  letter-spacing: 0;
+  line-height: 25px;
+  .strongText {
+    @include work-sans-500;
+    @include font-smoothing(antialiased);
+  }
 }

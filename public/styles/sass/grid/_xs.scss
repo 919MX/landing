@@ -4,6 +4,10 @@
     padding: 0px;
   }
 
+  .gutter-xs {
+    padding-right: 0 !important;
+  }
+
   .bleed-xs > div:last-child {
     padding-right: 0;
   }
