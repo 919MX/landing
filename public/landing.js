@@ -102,8 +102,8 @@ const renderMetrics = ({ groups, actions, total_spent: spent }) => {
   _p.innerHTML = metricsStr
 }
 
-const renderCommunitiesHeader = ({ results }) => {
-  const _h = document.getElementById('brigada-communities-header')
+const renderMapHeader = ({ results }) => {
+  const _h = document.getElementById('brigada-map-header')
   _h.innerHTML = `Al dia de hoy, estamos en ${results.length} comunidades`
 }
 
@@ -233,14 +233,186 @@ const renderOpportunities = ({ results }) => {
   _container.innerHTML = markup.join('')
 }
 
-const renderMap = ({ results }) => {
-  console.log(results)
+const fmt = num => {
+  if (num === -1 || num === undefined || num === null || num === '') return '-'
+  return num.toLocaleString()
+}
+
+const renderMap = (localities) => {
+  if (!window.mapboxgl) {
+    setTimeout(() => renderMap(localities), 2000)
+    return
+  }
+
+  const mapboxgl = window.mapboxgl
+  const { results } = localities
+
+  mapboxgl.accessToken = 'pk.eyJ1Ijoia3lsZWJlYmFrIiwiYSI6ImNqOTV2emYzdjIxbXEyd3A2Ynd2d2s0dG4ifQ.W9vKUEkm1KtmR66z_dhixA'
+  const map = new mapboxgl.Map({
+    container: 'brigada-map',
+    style: 'mapbox://styles/kylebebak/cj95wutp2hbr22smynacs9gnk',
+    zoom: 6,
+    center: [-95.9042505, 17.1073688],
+  })
+
+  map.scrollZoom.disable()
+
+  // creates a popup, but doesn't add it to map yet
+  const popup = new mapboxgl.Popup({ closeButton: false })
+
+  const dmgGrade = (locality) => {
+    const levels = [
+      [40, 'low'],
+      [250, 'medium'],
+      [1250, 'high'],
+      [Number.MAX_SAFE_INTEGER, 'severe'],
+    ]
+    const { total } = locality.meta
+    if (total === undefined || total === null || total === '' || total === -1) return 'unknown'
+
+    for (const l of levels) {
+      if (total < l[0]) return l[1]
+    }
+    return 'unknown'
+  }
+
+  const features = results.map((locality) => {
+    const { location: { lat, lng }, meta: { total }, id } = locality
+    return {
+      type: 'Feature',
+      properties: { id, total: total || -1, locality, dmgGrade: dmgGrade(locality) },
+      geometry: {
+        type: 'Point',
+        coordinates: [lng, lat],
+      }
+    }
+  })
+
+  map.on('load', () => {
+    map.addLayer({
+      id: 'damage',
+      type: 'circle',
+      source: {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features,
+        }
+      },
+      paint: {
+        'circle-radius': {
+          property: 'total',
+          stops: [
+            [-1, 4],
+            [1, 3],
+            [3, 3.5],
+            [10, 4],
+            [30, 4.5],
+            [100, 5.5],
+            [300, 7],
+            [600, 10],
+            [1000, 13],
+            [2000, 16],
+            [3000, 20],
+            [4000, 25],
+            [7000, 30],
+            [10000, 35],
+            [15000, 40],
+          ],
+        },
+        'circle-color': {
+          property: 'total',
+          stops: [
+            [-1, '#939AA1'],
+            [0, '#eedd00'],
+            [40, '#ddaa00'],
+            [250, '#dd6600'],
+            [1250, '#ff0000'],
+          ],
+        },
+        'circle-opacity': 0.75,
+      },
+    })
+
+    map.addControl(new mapboxgl.NavigationControl(), 'top-left')
+
+    map.on('mousemove', 'damage', (e) => {
+      // change the cursor style as a ui indicator
+      map.getCanvas().style.cursor = 'pointer'
+
+      // populate the popup and set its coordinates based on the feature
+      const feature = e.features[0]
+      showPopup(feature)
+    })
+
+    map.on('mouseleave', 'damage', () => {
+      map.getCanvas().style.cursor = ''
+      popup.remove()
+    })
+
+    map.on('click', 'damage', (e) => {
+      window.location = `https://app.brigada.mx/comunidades/${e.features[0].properties.id}`
+    })
+  })
+
+  const showPopup = (feature) => {
+    const locality = JSON.parse(feature.properties.locality)
+    const {
+      name,
+      state_name: stateName,
+      meta: { habit, notHabit, destroyed, margGrade, total },
+    } = locality
+
+    const markup = `
+      <span class="popup-header">${name}, ${stateName}</span>
+      <div class="popup-item"><span class="popup-label">VIVIENDAS DAÑADAS</span> <span class="popup-value">${fmt(total)}</span></div>
+      <div class="popup-item"><span class="popup-label">HABITABLES</span> <span class="popup-value">${fmt(habit)}</span></div>
+      <div class="popup-item"><span class="popup-label">NO HABITABLES</span> <span class="popup-value">${fmt(notHabit)}</span></div>
+      <div class="popup-item"><span class="popup-label">PÉRDIDA TOTAL</span> <span class="popup-value">${fmt(destroyed)}</span></div>
+      <div class="popup-item"><span class="popup-label">GRADO MARGINACIÓN</span> <span class="popup-value">${margGrade}</span></div>
+    `
+    popup.setLngLat(feature.geometry.coordinates).setHTML(markup).addTo(map)
+  }
+
+  renderLegend(features)
+}
+
+const renderLegend = (features) => {
+  const metaByDmgGrade = {
+    unknown: {label: 'SIN DATOS', color: '#939AA1'},
+    low: {label: 'MENOR', color: '#eedd00'},
+    medium: {label: 'MEDIO', color: '#ddaa00'},
+    high: {label: 'GRAVE', color: '#dd6600'},
+    severe: {label: 'MUY GRAVE', color: '#ff0000'},
+  }
+
+  const _legend = document.getElementById('brigada-map-legend')
+  const counts = {
+    severe: 0,
+    high: 0,
+    medium: 0,
+    low: 0,
+    unknown: 0,
+  }
+
+  for (let l of features) {
+    counts[l.properties.dmgGrade] += 1
+  }
+  const markup = Object.keys(counts).map(key => {
+    const { label, color } = metaByDmgGrade[key]
+    return `<div class='legend-item'>
+      <div class="circle" style="background-color: ${color}"></div>
+      <span class="label">${label}</span>
+      <span class="count">${fmt(counts[key])}</span>
+    </div>`
+  })
+  _legend.innerHTML = markup.join('\n')
 }
 
 const render = (data) => {
   const { metrics, actions, opportunities, localities } = data
   renderMetrics(metrics)
-  renderCommunitiesHeader(localities)
+  renderMapHeader(localities)
 
   renderActions(actions)
   renderOpportunities(opportunities)
