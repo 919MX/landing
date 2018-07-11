@@ -386,7 +386,7 @@ const renderLegend = (features) => {
     severe: {label: 'MUY GRAVE', color: '#ff0000'},
   }
 
-  const _legend = document.getElementById('brigada-map-legend')
+  const _legend = document.getElementById('brigada-legend-items')
   const counts = {
     severe: 0,
     high: 0,
@@ -400,10 +400,10 @@ const renderLegend = (features) => {
   }
   const markup = Object.keys(counts).map(key => {
     const { label, color } = metaByDmgGrade[key]
-    return `<div class='legend-item'>
-      <div class="circle" style="background-color: ${color}"></div>
-      <span class="label">${label}</span>
-      <span class="count">${fmt(counts[key])}</span>
+    return `<div class="legend-item">
+      <div class="legend-circle" style="background-color: ${color}"></div>
+      <span class="legend-label">${label}</span>
+      <span class="legend-count">${fmt(counts[key])}</span>
     </div>`
   })
   _legend.innerHTML = markup.join('\n')

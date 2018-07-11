@@ -5,9 +5,84 @@
   position: relative;
 }
 
-#brigada-map-legend {
+#brigada-legend {
   position: absolute;
   bottom: 25px;
   right: 25px;
   z-index: 2;
+  background-color: white;
+  border-radius: 2px;
+  padding: 10px;
+  @include box-sizing;
+  @include box-shadow(0,40px,100px,0,37,38,50,.10);
+}
+
+#brigada-legend-header {
+  @include nunito-sans-600;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.legend-item {
+  margin-bottom: 6px;
+}
+
+.legend-label {
+  @include nunito-sans;
+  color: $grey-8;
+  font-size: 12px;
+  line-height: 16px;
+  opacity: .4;
+  text-transform: uppercase;
+}
+
+.legend-count {
+  @include roboto-700;
+  font-size: 13px;
+  line-height: 20px;
+  float: right;
+}
+
+.legend-circle {
+  display: inline-block;
+  margin-right: 7px;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+div.mapboxgl-popup-content {
+  padding: 15px;
+}
+
+.popup-header {
+  @include nunito-sans-600;
+  color: $grey-7;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.popup-item {
+  margin-bottom: 3px;
+}
+
+.popup-label {
+  @include nunito-sans;
+  color: $grey-8;
+  font-size: 12px;
+  line-height: 16px;
+  opacity: .4;
+  text-transform: uppercase;
+  margin-right: 16px;
+  display: inline-block;
+}
+
+.popup-value {
+  @include roboto-700;
+  font-size: 13px;
+  line-height: 20px;
+  float: right;
 }
