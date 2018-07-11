@@ -56,11 +56,11 @@ a:hover {
 
 a.button, header#beta li {
   @include nunito-sans-800;
-  font-size: 11px;
+  @include font-smoothing(antialiased);
+  font-size: 13px;
   line-height: 16px;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.35px;
   text-align: center;
-  text-transform: uppercase;
 }
 
 .card-text {

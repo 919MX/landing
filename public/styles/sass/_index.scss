@@ -69,6 +69,7 @@
   background: url(../assets/img/hero.jpg) no-repeat left;
   background-size: cover;
   height: calc(100vh + 60px);
+  filter: brightness(86%) contrast(110%);
 }
 
 #logo-wall {
@@ -144,7 +145,7 @@
   #index header .nav a {
     color: white;
     opacity: 1.0;
-    text-shadow: 0 0 20px rgba(0,0,0,0.60);
+    text-shadow: 0 0 12px rgba(0,0,0,0.3);
     @include transition(all, .15s, linear);
     &:hover {
       opacity: 0.8;
@@ -226,7 +227,7 @@
   #index header .nav a {
     color: white;
     opacity: 1.0;
-    text-shadow: 0 0 20px rgba(0,0,0,0.60);
+    text-shadow: 0 0 12px rgba(0,0,0,0.6);
     @include transition(all, .15s, linear);
     &:hover {
       opacity: 0.8;
@@ -550,6 +551,7 @@
     color: #000000;
     opacity: 0.8;
     @include transition(all, .15s, linear);
+
     &:hover {
       color: #3DC587;
     }
