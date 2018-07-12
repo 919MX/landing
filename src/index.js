@@ -1,3 +1,9 @@
+import 'babel-polyfill'
+import 'whatwg-fetch'
+
+import env from 'src/env'
+
+
 const fmtSpent = (b) => {
   return Math.round(b / 100000) / 10
 }
@@ -427,8 +433,7 @@ const main = () => {
     if (scrollIntoView(_cta, { behavior: 'smooth' })) e.preventDefault()
   }, false)
 
-  // fetch('http://brigada.mx/landing_data.json')
-  fetch('http://localhost:8000/api/landing/')
+  fetch(env.env === 'dev' ? 'http://localhost:8000/api/landing/' : 'http://brigada.mx/landing_data.json')
     .then(r => r.json())
     .catch(e => renderError(e))
     .then(data => render(data))
