@@ -1,7 +1,7 @@
 .card-container {
   display: inline-flex;
   flex-direction: column;
-  width: 30%;
+  width: 29%;
   cursor: pointer;
   box-sizing: content-box;
   @include transition(all, .15s, linear);
@@ -38,6 +38,7 @@
   height: 256px;
   position: relative;
   background-size: cover;
+  background-position: center;
   float: left;
   z-index: 1;
 }

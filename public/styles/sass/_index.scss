@@ -228,11 +228,14 @@
       }
     }
     a.solid-green {
-      padding: 17px 37px 15px 37px;
+      padding: 17px 0px;
       margin-right: 8px;
     }
     a.empty-green {
-      padding: 16px 23px 14px 23px;
+      padding: 16px 0px;
+    }
+    a.solid-green, a.empty-green {
+      width: 131px;
     }
   }
   #index {
@@ -313,6 +316,7 @@
     }
     .button {
       margin-bottom: 89px;
+      width: 167px;
     }
   }
 
@@ -417,55 +421,6 @@
   #feature1, #feature2, #feature3 {
     text-align: center;
   }
-  #feature1 {
-    p {
-      margin: 0 auto 21px auto;
-      width: 73%;
-    }
-    margin-bottom: -12px;
-    #feature1-img {
-      background: url(../assets/img/feature1-sm.png) no-repeat;
-      background-size: 579px 654px;
-      width: 579px;
-      height: 654px;
-    }
-    h2 {
-      margin-bottom: 10px;
-    }
-  }
-  #feature2 {
-    p {
-      margin: 0 auto;
-    }
-    margin-bottom: 16px;
-    #feature2-img {
-      background: url(../assets/img/feature2-sm.png) no-repeat;
-      background-size: 627px 742px;
-      width: 627px;
-      height: 742px;
-    }
-  }
-  #feature3 {
-    margin-bottom: 81px;
-    p {
-      margin: 0 auto 41px auto;
-    }
-    #feature3-img {
-      background: url(../assets/img/feature3-sm.png) no-repeat;
-      background-size: 768px 552px;
-      width: 768px;
-      height: 552px;
-    }
-  }
-  #feature2, #feature3 {
-    h2 {
-      margin: 20px auto 10px auto;
-      width: 85%;
-    }
-    p {
-      width: 73%;
-    }
-  }
   #cta {
     text-align: center;
     margin-top: 45px;
@@ -485,7 +440,14 @@
       margin: 0 auto;
     }
     .button {
-      margin: 27px 0 89px 0;
+      display: block;
+      width: 167px;
+    }
+    .button:first-of-type {
+      margin: 27px auto 12px auto;
+    }
+    .button:last-of-type {
+      margin: 0px auto 89px auto;
     }
   }
 
@@ -651,13 +613,13 @@
   }
   #cta {
     text-align: center;
-    padding: 360px 0 34px 0;
+    padding: 360px 0 36px 0;
     #cta-img {
       height: 291px;
     }
     #cta-img-wrap {
       width: 100%;
-      bottom: 510px;
+      bottom: 582px;
     }
     h2 {
       margin-bottom: 21px;
@@ -667,7 +629,14 @@
       width: 90%;
     }
     .button {
-      margin-bottom: 89px;
+      display: block;
+      width: 167px;
+    }
+    .button:first-of-type {
+      margin: 27px auto 12px auto;
+    }
+    .button:last-of-type {
+      margin: 0px auto 89px auto;
     }
   }
 
