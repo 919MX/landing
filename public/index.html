@@ -52,7 +52,7 @@
             <li><a href="https://app.brigada.mx/voluntarios">Voluntarios</a></li>
             <li class="xs-hidden"><a href="https://app.brigada.mx/reconstructores">Reconstructores</a></li>
             <li class="xs-hidden"><a href="https://app.brigada.mx/donadores">Donadores</a></li>
-            <li><a href="https://app.brigada.mx" class="button white">Entrar</a></li>
+            <li><a href="https://app.brigada.mx/cuenta" class="button white">Log In</a></li>
           </ul>
         </div>
 
@@ -115,14 +115,10 @@
 
     <div class="container wrap nowrap-xs">
       <div class="row bleed-sm">
-        <div class="col-lg-10 col-lg-offset-1 col-md-7 col-sm-8 col-xs-4 between-lg gutter-lg center-md center-sm last-sm center-xs last-xs">
-          <div>
-            <h2>Al compartir información, nos coordinamos mejor</h2>
-            <p>Publicamos nuestros proyectos para no duplicar esfuerzos.</p>
-          </div>
-          <div>
-            <a href="https://app.brigada.mx/reconstructores">VER LOS PROYECTOS</a>
-          </div>
+        <div class="col-lg-10 col-lg-offset-1 col-md-7 col-sm-8 col-xs-4 center-md center-sm last-sm center-xs last-xs">
+          <h2>Al compartir información, nos coordinamos mejor</h2>
+          <p>Publicamos nuestros proyectos para no duplicar esfuerzos.</p>
+          <a class="arrow" href="https://app.brigada.mx/reconstructores">Ver los proyectos</a>
         </div>
       </div>
       <div class="row bleed-sm">
@@ -138,20 +134,18 @@
 
     <div class="container wrap nowrap-xs">
       <div class="row bleed-sm">
-        <div class="col-lg-10 col-lg-offset-1 col-md-7 col-sm-8 col-xs-4 between-lg gutter-lg center-md center-sm last-sm center-xs last-xs">
-          <div>
-            <h2>Al construir confianza, atraemos voluntarios</h2>
-            <p>Buscamos voluntarios para nuestros proyectos más transparentes.</p>
-          </div>
-          <div>
-            <a href="https://app.brigada.mx/voluntarios">VER LOS PUESTOS</a>
-          </div>
+        <div class="col-lg-10 col-lg-offset-1 col-md-7 col-sm-8 col-xs-4 gutter-lg center-md center-sm last-sm center-xs last-xs">
+          <h2 id="brigada-map-header">Al dia de hoy, estamos en _ comunidades</h2>
+          <p>Nos enfocamos en lugares de alto daño y carencia social.</p>
+          <a class="arrow" href="https://app.brigada.mx">Ver todas las comunidades dañadas</a>
         </div>
       </div>
-      <div class="row bleed-sm">
-        <div class="col-lg-10 col-lg-offset-1 col-md-7 col-sm-8 col-xs-4 gutter-lg center-md center-sm last-sm center-xs last-xs">
-          <div id="brigada-opportunities" class="flex-lg between-lg"></div>
-        </div>
+    </div>
+
+    <div id="brigada-map">
+      <div id='brigada-legend'>
+        <div id='brigada-legend-header'>Nivel de daño</div>
+        <div id='brigada-legend-items'></div>
       </div>
     </div>
 
@@ -161,22 +155,16 @@
 
     <div class="container wrap nowrap-xs">
       <div class="row bleed-sm">
-        <div class="col-lg-10 col-lg-offset-1 col-md-7 col-sm-8 col-xs-4 between-lg gutter-lg center-md center-sm last-sm center-xs last-xs">
-          <div>
-            <h2 id="brigada-map-header">Al dia de hoy, estamos en _ comunidades</h2>
-            <p>Nos enfocamos en lugares de alto daño y carencia social.</p>
-          </div>
-          <div>
-            <a href="https://app.brigada.mx">VER TODAS LAS COMUNIDADES DAÑADAS</a>
-          </div>
+        <div class="col-lg-10 col-lg-offset-1 col-md-7 col-sm-8 col-xs-4 center-md center-sm last-sm center-xs last-xs">
+          <h2>Al construir confianza, atraemos voluntarios</h2>
+          <p>Buscamos voluntarios para nuestros proyectos más transparentes.</p>
+          <a class="arrow" href="https://app.brigada.mx/voluntarios">Ver los puestos</a>
         </div>
       </div>
-    </div>
-
-    <div id="brigada-map">
-      <div id='brigada-legend'>
-        <div id='brigada-legend-header'>Niveles de daño</div>
-        <div id='brigada-legend-items'></div>
+      <div class="row bleed-sm">
+        <div class="col-lg-10 col-lg-offset-1 col-md-7 col-sm-8 col-xs-4 gutter-lg center-md center-sm last-sm center-xs last-xs">
+          <div id="brigada-opportunities" class="flex-lg between-lg"></div>
+        </div>
       </div>
     </div>
 

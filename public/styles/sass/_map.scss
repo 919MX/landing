@@ -1,18 +1,18 @@
 #brigada-map {
-  margin-left: 5%;
-  width: 90%;
-  height: 500px;
+  width: 100%;
+  height: 608px;
   position: relative;
 }
 
 #brigada-legend {
   position: absolute;
-  bottom: 25px;
-  right: 25px;
+  bottom: 26px;
+  right: 26px;
   z-index: 2;
   background-color: white;
   border-radius: 2px;
-  padding: 10px;
+  padding: 15px 15px 9px 15px;
+  width: 152px;
   @include box-sizing;
   @include box-shadow(0,40px,100px,0,37,38,50,.10);
 }
@@ -25,12 +25,20 @@
 }
 
 .legend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 6px;
+}
+
+.legend-item div {
+  display: flex;
+  align-items: center;
 }
 
 .legend-label {
   @include nunito-sans;
-  color: $grey-8;
+  color: #9F9F9F;
   font-size: 12px;
   line-height: 16px;
   opacity: .4;
@@ -38,7 +46,8 @@
 }
 
 .legend-count {
-  @include roboto-700;
+  @include roboto-500;
+  color: #141418;
   font-size: 13px;
   line-height: 20px;
   float: right;
@@ -46,7 +55,7 @@
 
 .legend-circle {
   display: inline-block;
-  margin-right: 7px;
+  margin-right: 10px;
   border-radius: 50%;
   width: 8px;
   height: 8px;
@@ -85,4 +94,38 @@ div.mapboxgl-popup-content {
   font-size: 13px;
   line-height: 20px;
   float: right;
+}
+
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+  box-shadow: 0px 20px 60px 0px rgba(37, 38, 50, 0.15) !important;
+  right: unset !important;
+  z-index: 2 !important;
+  margin: 26px 26px 0 0 !important;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-compass {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in {
+  background: url(../assets/img/zoom-in.svg) no-repeat center !important;
+  background-size: 10px 10px !important;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-out {
+  background: url(../assets/img/zoom-out.svg) no-repeat center !important;
+  background-size: 10px 2px !important;
+}
+
+.mapboxgl-ctrl-group > button + button {
+  border-top: 1px solid #EDF1F5 !important;
+}
+
+.mapboxgl-ctrl-group {
+  border-radius: 2px !important;
+}
+
+.mapboxgl-ctrl button {
+  height: 36px !important;
+  width: 31px !important;
 }
