@@ -348,7 +348,12 @@ const main = () => {
     if (scrollIntoView(_cta, { behavior: 'smooth' })) e.preventDefault()
   }, false)
 
-  fetch(env.env === 'dev' ? 'http://localhost:8000/api/landing/' : 'http://brigada.mx/landing_data.json')
+  let url = 'http://brigada.mx/landing_data.json'
+  if (env.env === 'dev') {
+    if (/*@cc_on!@*/false || !!document.documentMode) url = 'http://10.0.2.2:8000/api/landing/' // IE VM
+    else url = 'http://localhost:8000/api/landing/'
+  }
+  fetch(url)
     .then(r => r.json())
     .catch(e => renderError(e))
     .then(data => render(data))
