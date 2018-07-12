@@ -1,4 +1,4 @@
-#brigada-map {
+#brigada-map, #brigada-map-fallback {
   width: 100%;
   height: 608px;
   position: relative;
@@ -11,7 +11,7 @@
   right: 0;
   position: absolute;
   background-image: url("http://brigada.mx/assets/img/landing-map-fallback.png");
-  background-size: contain;
+  background-size: cover;
 }
 
 #brigada-legend {
