@@ -150,9 +150,27 @@ const fmt = num => {
   return num.toLocaleString()
 }
 
+const getMap = () => {
+  try {
+    const map = new window.mapboxgl.Map({
+      container: 'brigada-map',
+      style: env.mapbox.style,
+      zoom: 6,
+      center: [-95.9042505, 17.1073688],
+    })
+    return map
+  } catch (e) {
+    const _wrapper = document.getElementById('brigada-map-wrapper')
+    _wrapper.innerHTML = `<div id="brigada-map-fallback">
+      <div id="brigada-map-image"></div>
+    </div>`
+    throw e
+  }
+}
+
 const renderMap = (localities) => {
   if (!window.mapboxgl) {
-    setTimeout(() => renderMap(localities), 2000)
+    setTimeout(() => renderMap(localities), 200)
     return
   }
 
@@ -160,13 +178,8 @@ const renderMap = (localities) => {
   const { results } = localities
 
   mapboxgl.accessToken = env.mapbox.accessToken
-  const map = new mapboxgl.Map({
-    container: 'brigada-map',
-    style: env.mapbox.style,
-    zoom: 6,
-    center: [-95.9042505, 17.1073688],
-  })
 
+  const map = getMap()
   map.scrollZoom.disable()
 
   // creates a popup, but doesn't add it to map yet
@@ -246,7 +259,7 @@ const renderMap = (localities) => {
       },
     })
 
-    map.addControl(new mapboxgl.NavigationControl(), 'top-left')
+    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-right')
 
     map.on('mousemove', 'damage', (e) => {
       // change the cursor style as a ui indicator
@@ -329,16 +342,7 @@ const render = (data) => {
   renderActions(actions)
   renderOpportunities(opportunities)
 
-  try {
-    renderMap(localities) // if mapbox throws an exception, don't render map
-  } catch (e) {
-    document.getElementById('brigada-legend').style.display = 'none'
-
-    const _map = document.getElementById('brigada-map')
-    _map.style['background-image'] = 'url("http://brigada.mx/assets/img/landing-map-fallback.png")'
-    _map.style['background-size'] = 'contain'
-    if (env.env !== 'prod') throw e
-  }
+  renderMap(localities)
 }
 
 const main = () => {

@@ -1,8 +1,18 @@
-#brigada-map {
+#brigada-map, #brigada-map-fallback {
   margin-left: 5%;
   width: 90%;
   height: 500px;
   position: relative;
+}
+
+#brigada-map-image {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-image: url("http://brigada.mx/assets/img/landing-map-fallback.png");
+  background-size: contain;
 }
 
 #brigada-legend {
@@ -85,4 +95,10 @@ div.mapboxgl-popup-content {
   font-size: 13px;
   line-height: 20px;
   float: right;
+}
+
+.mapboxgl-ctrl-top-right {
+  top: 26px !important;
+  right: 26px !important;
+  position: absolute !important;
 }
