@@ -1,2 +1,3 @@
-NODE_ENV=production CUSTOM_GIT_COMMIT_HASH=`git rev-parse HEAD` webpack --config webpack.prod.js
+NODE_ENV=production webpack --config webpack.prod.js
+gzip -9 public/bundle.js
 node-sass public/styles/sass -o public/styles --output-style compressed

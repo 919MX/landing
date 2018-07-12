@@ -1,104 +1,10 @@
 import 'babel-polyfill'
 import 'whatwg-fetch'
 
+import { fmtSpent, fmtBudget, scrollIntoView, dayOfYear, hash, rotatingHash } from 'src/tools'
+import pluralize from 'src/pluralize'
 import env from 'src/env'
 
-
-const fmtSpent = (b) => {
-  return Math.round(b / 100000) / 10
-}
-
-const fmtBudget = (b) => { // round to 1 or 0 decimal places
-  if (!b) return '$'
-  const millions = Math.round(b / 100000) / 10
-  if (millions >= 100) return `$${Math.round(millions)}M`
-  if (millions) return `$${millions}M`
-
-  const thousands = Math.round(b / 1000)
-  return `$${thousands}K`
-}
-
-const scrollIntoView = (el, options) => {
-  if (typeof el.scrollIntoView === 'function') {
-    el.scrollIntoView(options)
-    return true
-  }
-  return false
-}
-
-const dayOfYear = () => {
-  const now = new Date()
-  const start = new Date(now.getFullYear(), 0, 0)
-  return Math.floor((now - start) / (1000 * 60 * 60 * 24))
-}
-
-const hash = (n) => {
-  const s = String(n * 1000000)
-  let hash = 0
-  if (s.length == 0) {
-    return hash
-  }
-  for (let i = 0; i < s.length; i++) {
-    const char = s.charCodeAt(i)
-    hash = ((hash<<5)-hash)+char
-    hash = hash & hash // Convert to 32bit integer
-  }
-  const _hash = hash % 10000
-  return Math.sign(_hash) * _hash
-}
-
-const rotatingHash = (n, days = 3) => {
-  return hash(n + Math.floor(dayOfYear() / days))
-}
-
-const pluralize = (str) => {
-  let plural
-
-  const last = str[str.length - 1] // Last letter of str
-  const lastTwo = str.slice(-2)
-  const lastThree = str.slice(-3)
-
-  if (last === 'x' || last === 's') {
-    plural = str
-  }
-  else if (last === 'z') {
-    // drop the z and add ces
-    const radical = str.substring(0, str.length - 1)
-    plural = radical + 'ces'
-  }
-  else if (last === 'c') {
-    // drop the z and add ces
-    const radical = str.substring(0, str.length - 1)
-    plural = radical + 'ques'
-  }
-  else if (last === 'g') {
-    // add an extra u
-    plural = str + 'ues'
-  }
-  else if (last === 'a' || last === 'e' || last === 'é' || last === 'i' || last === 'o' || last === 'u') {
-    // easy, just add s
-    plural = str + 's'
-  }
-  else if (last === 'á') {
-    const radical = str.substring(0, str.length - 1)
-    plural = radical + 'aes'
-  }
-  else if (last === 'ó') {
-    const radical = str.substring(0, str.length - 1)
-    plural = radical + 'oes'
-  }
-  else if (lastThree === 'ión') {
-    const radical = str.substring(0, str.length - 3)
-    plural = radical + 'iones'
-  }
-  else if (lastTwo === 'ín') {
-    const radical = str.substring(0, str.length - 2)
-    plural = radical + 'ines'
-  } else {
-    plural = str + 'es'
-  }
-  return plural
-}
 
 const renderError = () => {}
 
@@ -253,10 +159,10 @@ const renderMap = (localities) => {
   const mapboxgl = window.mapboxgl
   const { results } = localities
 
-  mapboxgl.accessToken = 'pk.eyJ1Ijoia3lsZWJlYmFrIiwiYSI6ImNqOTV2emYzdjIxbXEyd3A2Ynd2d2s0dG4ifQ.W9vKUEkm1KtmR66z_dhixA'
+  mapboxgl.accessToken = env.mapbox.accessToken
   const map = new mapboxgl.Map({
     container: 'brigada-map',
-    style: 'mapbox://styles/kylebebak/cj95wutp2hbr22smynacs9gnk',
+    style: env.mapbox.style,
     zoom: 6,
     center: [-95.9042505, 17.1073688],
   })
@@ -423,7 +329,16 @@ const render = (data) => {
   renderActions(actions)
   renderOpportunities(opportunities)
 
-  renderMap(localities)
+  if (env.env === 'prod') {
+    try {
+      renderMap(localities) // if mapbox throws an exception, don't render map
+    } catch (e) {
+      const _map = document.getElementById('brigada-map')
+      _map.style.display = 'none'
+    }
+  } else {
+    renderMap(localities)
+  }
 }
 
 const main = () => {
