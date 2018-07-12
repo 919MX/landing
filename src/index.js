@@ -329,15 +329,15 @@ const render = (data) => {
   renderActions(actions)
   renderOpportunities(opportunities)
 
-  if (env.env === 'prod') {
-    try {
-      renderMap(localities) // if mapbox throws an exception, don't render map
-    } catch (e) {
-      const _map = document.getElementById('brigada-map')
-      _map.style.display = 'none'
-    }
-  } else {
-    renderMap(localities)
+  try {
+    renderMap(localities) // if mapbox throws an exception, don't render map
+  } catch (e) {
+    document.getElementById('brigada-legend').style.display = 'none'
+
+    const _map = document.getElementById('brigada-map')
+    _map.style['background-image'] = 'url("http://brigada.mx/assets/img/landing-map-fallback.png")'
+    _map.style['background-size'] = 'contain'
+    if (env.env !== 'prod') throw e
   }
 }
 
