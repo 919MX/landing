@@ -1,3 +1,19 @@
+.card-container {
+  display: inline-flex;
+  flex-direction: column;
+  width: 30%;
+  cursor: pointer;
+  @include transition(opacity, .15s, linear);
+}
+
+.card-container:hover {
+  opacity: 0.8;
+}
+
+.card-text {
+  padding: 24px;
+}
+
 .emptyThumbnail {
   width: 300px;
   height: 225px;
@@ -14,7 +30,6 @@
   background-size: cover;
   float: left;
   z-index: 1;
-  margin-bottom: 20px;
 }
 
 .video:before {

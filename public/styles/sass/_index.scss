@@ -5,16 +5,6 @@
   #brigada-opportunities {
     max-width: 100%;
   }
-  .card-container {
-    display: inline-flex;
-    flex-direction: column;
-    width: 30%;
-    cursor: pointer;
-    @include transition(opacity, .15s, linear);
-  }
-  .card-container:hover {
-    opacity: 0.8;
-  }
   #pienza {
     background: url(../assets/img/logo-pienza-dark.png) no-repeat;
     background-size: 130px 27px;
@@ -55,10 +45,6 @@
     margin-top: 14px;
     display: inline-flex;
   }
-}
-
-.strongText {
-  font-weight: bold;
 }
 
 #hero-img-wrap {
