@@ -33,17 +33,28 @@ h3 {
 }
 
 a {
-  @include nunito-sans-700;
-  @include font-smoothing(antialiased);
   text-decoration: none;
-  font-size: 13px;
+  @include font-smoothing(antialiased);
+}
+
+a.arrow {
+  @include nunito-sans-700;
+  font-size: 15px;
   color: #3DC59F;
-  letter-spacing: 0.35px;
+  letter-spacing: 0.4px;
   line-height: 16px;
   @include transition(color, .15s, linear);
 }
 
-a:hover {
+a.arrow:after {
+  content: "";
+  background: url(../assets/img/right-arrow.svg) no-repeat;
+  width: 10px;
+  height: 10px;
+  margin: 6px 0 0 5px;
+}
+
+a.arrow:hover {
   color: #13A68C;
 }
 
@@ -55,7 +66,7 @@ a:hover {
 }
 
 a.button, header#beta li {
-  @include nunito-sans-800;
+  @include nunito-sans-700;
   @include font-smoothing(antialiased);
   font-size: 13px;
   line-height: 16px;
@@ -69,8 +80,13 @@ a.button, header#beta li {
   color: #141418;
   letter-spacing: 0;
   line-height: 25px;
-  .strongText {
-    @include work-sans-500;
-    @include font-smoothing(antialiased);
-  }
+}
+
+.card-title {
+  @include work-sans-500;
+  @include font-smoothing(antialiased);
+  font-size: 20px;
+  color: #141418;
+  letter-spacing: 0;
+  line-height: 25px;
 }

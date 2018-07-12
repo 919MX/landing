@@ -3,21 +3,31 @@
   flex-direction: column;
   width: 30%;
   cursor: pointer;
-  @include transition(opacity, .15s, linear);
+  box-sizing: content-box;
+  @include transition(all, .15s, linear);
+  @include box-shadow(0,30px,60px,0,37,38,50,.10);
 }
 
 .card-container:hover {
-  opacity: 0.8;
+  @include box-shadow(0,30px,60px,0,37,38,50,.16);
+  margin: -2px 0 2px 0;
 }
 
 .card-text {
   padding: 24px;
+  background-color: white;
+  height: 98px;
+}
+
+.card-title {
+  display: flex;
+  margin-bottom: 9px;
 }
 
 .emptyThumbnail {
   width: 300px;
   height: 225px;
-  background: no-repeat url("assets/img/empty-thumbnail.svg") center;
+  background: url(..assets/img/empty-thumbnail.svg) no-repeat center;
   background-size: 60px 91px;
   background-color: #EDF1F5;
   float: left;
@@ -25,7 +35,7 @@
 
 .video, .image {
   width: 100%;
-  height: 225px;
+  height: 256px;
   position: relative;
   background-size: cover;
   float: left;

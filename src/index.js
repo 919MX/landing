@@ -75,9 +75,9 @@ const renderActions = ({ results }) => {
     let labelText
     if (i === 1 && donations.length > 0) {
       const { donor: { name: donorName }, amount } = donations[0]
-      labelText = `<span class="strongText">${donorName}</span> invierte ${fmtBudget(amount)} en ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} para ${locName}, ${stateName}.`
+      labelText = `<span class="card-title">${donorName}</span> invierte ${fmtBudget(amount)} en ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} para ${locName}, ${stateName}.`
     } else {
-      labelText = `<span class="strongText">${orgName}</span> realiza ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} en ${locName}, ${stateName} por ${fmtBudget(budget)}.`
+      labelText = `<span class="card-title">${orgName}</span> Realiza ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} en ${locName}, ${stateName} por ${fmtBudget(budget)}.`
     }
 
     return `<div class="card-container">
@@ -137,7 +137,7 @@ const renderOpportunities = ({ results }) => {
     return `<div class="card-container">
       <a class="${type}" href="https://app.brigada.mx/voluntariado/${id}${q}" style="background-image: url('${src}')"></a>
       <div class="card-text">
-        <span class="strongText">${orgName}</span> busca ${target} ${target !== 1 ? pluralize(position.toLowerCase()) : position.toLowerCase()} en ${locName}, ${stateName}.
+        <span class="card-title">${orgName}</span> Busca ${target} ${target !== 1 ? pluralize(position.toLowerCase()) : position.toLowerCase()} en ${locName}, ${stateName}.
       </div>
     </div>`
   })
@@ -290,11 +290,11 @@ const renderMap = (localities) => {
 
     const markup = `
       <span class="popup-header">${name}, ${stateName}</span>
-      <div class="popup-item"><span class="popup-label">VIVIENDAS DAÑADAS</span> <span class="popup-value">${fmt(total)}</span></div>
-      <div class="popup-item"><span class="popup-label">HABITABLES</span> <span class="popup-value">${fmt(habit)}</span></div>
-      <div class="popup-item"><span class="popup-label">NO HABITABLES</span> <span class="popup-value">${fmt(notHabit)}</span></div>
-      <div class="popup-item"><span class="popup-label">PÉRDIDA TOTAL</span> <span class="popup-value">${fmt(destroyed)}</span></div>
-      <div class="popup-item"><span class="popup-label">GRADO MARGINACIÓN</span> <span class="popup-value">${margGrade}</span></div>
+      <div class="popup-item"><span>Viviendas dañadas</span> <span>${fmt(total)}</span></div>
+      <div class="popup-item"><span>Habitables</span> <span>${fmt(habit)}</span></div>
+      <div class="popup-item"><span>No habitables</span> <span>${fmt(notHabit)}</span></div>
+      <div class="popup-item"><span>Pérdida total</span> <span>${fmt(destroyed)}</span></div>
+      <div class="popup-item"><span>Grado de marginación</span> <span>${margGrade}</span></div>
     `
     popup.setLngLat(feature.geometry.coordinates).setHTML(markup).addTo(map)
   }
@@ -326,8 +326,10 @@ const renderLegend = (features) => {
   const markup = Object.keys(counts).map(key => {
     const { label, color } = metaByDmgGrade[key]
     return `<div class="legend-item">
-      <div class="legend-circle" style="background-color: ${color}"></div>
-      <span class="legend-label">${label}</span>
+      <div>
+        <div class="legend-circle" style="background-color: ${color}"></div>
+        <span class="legend-label">${label}</span>
+      </div>
       <span class="legend-count">${fmt(counts[key])}</span>
     </div>`
   })

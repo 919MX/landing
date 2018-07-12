@@ -1,7 +1,6 @@
-#brigada-map, #brigada-map-fallback {
-  margin-left: 5%;
-  width: 90%;
-  height: 500px;
+#brigada-map {
+  width: 100%;
+  height: 608px;
   position: relative;
 }
 
@@ -17,12 +16,13 @@
 
 #brigada-legend {
   position: absolute;
-  bottom: 25px;
-  right: 25px;
+  bottom: 26px;
+  right: 26px;
   z-index: 2;
   background-color: white;
   border-radius: 2px;
-  padding: 10px;
+  padding: 15px 15px 9px 15px;
+  width: 152px;
   @include box-sizing;
   @include box-shadow(0,40px,100px,0,37,38,50,.10);
 }
@@ -35,20 +35,28 @@
 }
 
 .legend-item {
-  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.legend-item div {
+  display: flex;
+  align-items: center;
 }
 
 .legend-label {
   @include nunito-sans;
-  color: $grey-8;
+  color: #9F9F9F;
   font-size: 12px;
   line-height: 16px;
-  opacity: .4;
   text-transform: uppercase;
 }
 
 .legend-count {
-  @include roboto-700;
+  @include roboto-500;
+  color: #141418;
   font-size: 13px;
   line-height: 20px;
   float: right;
@@ -56,49 +64,78 @@
 
 .legend-circle {
   display: inline-block;
-  margin-right: 7px;
+  margin-right: 10px;
   border-radius: 50%;
   width: 8px;
   height: 8px;
 }
 
-div.mapboxgl-popup-content {
-  padding: 15px;
+.mapboxgl-popup-content {
+  border-radius: 2px !important;
+  box-shadow: 0px 40px 100px 0px rgba(37, 38, 50, 0.1) !important;
+}
+
+.mapboxgl-popup-tip {
+  border-width: 5px !important;
 }
 
 .popup-header {
-  @include nunito-sans-600;
-  color: $grey-7;
-  font-size: 14px;
-  line-height: 20px;
+  @include roboto-500;
+  color: #141418;
+  font-size: 13px;
+  display: flex;
+  text-transform: capitalize;
   margin-bottom: 10px;
-  display: inline-block;
+  padding: 6px 9px 0 9px;
 }
 
 .popup-item {
-  margin-bottom: 3px;
-}
-
-.popup-label {
   @include nunito-sans;
-  color: $grey-8;
+  @include font-smoothing(antialiased);
+  display: flex;
+  justify-content: space-between;
+  min-width: 180px;
   font-size: 12px;
-  line-height: 16px;
-  opacity: .4;
-  text-transform: uppercase;
-  margin-right: 16px;
-  display: inline-block;
-}
-
-.popup-value {
-  @include roboto-700;
-  font-size: 13px;
   line-height: 20px;
-  float: right;
+  letter-spacing: .4px;
+  color: #9F9F9F;
+  padding: 0 9px;
 }
 
-.mapboxgl-ctrl-top-right {
-  top: 26px !important;
-  right: 26px !important;
-  position: absolute !important;
+.popup-item:last-of-type {
+  padding-bottom: 1px;
+}
+
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+  box-shadow: 0px 20px 60px 0px rgba(37, 38, 50, 0.15) !important;
+  right: unset !important;
+  z-index: 2 !important;
+  margin: 26px 26px 0 0 !important;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-compass {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in {
+  background: url(../assets/img/zoom-in.svg) no-repeat center !important;
+  background-size: 10px 10px !important;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-out {
+  background: url(../assets/img/zoom-out.svg) no-repeat center !important;
+  background-size: 10px 2px !important;
+}
+
+.mapboxgl-ctrl-group > button + button {
+  border-top: 1px solid #EDF1F5 !important;
+}
+
+.mapboxgl-ctrl-group {
+  border-radius: 2px !important;
+}
+
+.mapboxgl-ctrl button {
+  height: 36px !important;
+  width: 31px !important;
 }
