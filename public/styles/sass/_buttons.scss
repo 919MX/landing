@@ -13,12 +13,16 @@
 }
 
 a.solid-white {
-  color: $green;
+  color: #3DC59F;
   background-color: $white;
   @include box-shadow(0,10px,20px,0,0,0,0,0.04);
   @include transition(background-color, .15s, linear);
   @include font-smoothing(antialiased);
-  padding: 17px 54px 15px 54px;
+  padding: 17px 0;
+  width: 183px;
+  &:first-of-type {
+    margin-right: 8px;
+  }
   &:hover {
     background-color: #FAFBFC;
   }

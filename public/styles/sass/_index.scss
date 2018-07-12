@@ -274,56 +274,25 @@
   }
   #logo-wall {
     padding: 44px 0;
-    margin-bottom: 41px;
+    margin-bottom: 140px;
   }
   #feature1, #feature2, #feature3 {
     p {
-      margin-bottom: 21px;
-    }
-  }
-  #feature1 {
-    #feature1-img {
-      background: url(../assets/img/feature1-md.png) no-repeat;
-      background-size: 581px 654px;
-      width: 581px;
-      height: 654px;
+      margin-bottom: 7px;
     }
     h2 {
-      margin-bottom: 10px;
-      width: 330px;
+      margin-bottom: 3px;
+    }
+    a.arrow {
+      display: flex;
+      margin-bottom: 44px;
     }
   }
-  #feature2 {
-    margin: -38px 0 16px 0;
-    #feature2-img {
-      background: url(../assets/img/feature2-md.png) no-repeat;
-      background-size: 570px 742px;
-      width: 570px;
-      height: 742px;
-    }
+  #feature1, #feature2 {
+    margin-bottom: 140px;
   }
   #feature3 {
-    margin: 54px 0 192px 0;
-    #feature3-img {
-      background: url(../assets/img/feature3-md.png) no-repeat;
-      background-size: 741px 647px;
-      width: 741px;
-      height: 647px;
-      position: absolute;
-      left: 0;
-      display: flex;
-      align-self: center;
-      z-index: -1;
-    }
-  }
-  #feature2, #feature3 {
-    h2 {
-      margin-bottom: 10px;
-      width: 330px;
-    }
-    p {
-      margin-bottom: 21px;
-    }
+    margin-bottom: 197px;
   }
   #cta {
     margin-top: 45px;

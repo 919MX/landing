@@ -66,7 +66,7 @@ a.arrow:hover {
 }
 
 a.button, header#beta li {
-  @include nunito-sans-800;
+  @include nunito-sans-700;
   @include font-smoothing(antialiased);
   font-size: 13px;
   line-height: 16px;
