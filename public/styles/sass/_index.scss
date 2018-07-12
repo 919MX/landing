@@ -59,7 +59,7 @@
   background: url(../assets/img/hero.jpg) no-repeat left;
   background-size: cover;
   height: calc(100vh + 60px);
-  filter: brightness(86%) contrast(110%);
+  filter: brightness(92%) contrast(110%);
 }
 
 #logo-wall {
@@ -135,7 +135,7 @@
   #index header .nav a {
     color: white;
     opacity: 1.0;
-    text-shadow: 0 0 12px rgba(0,0,0,0.3);
+    text-shadow: 0 0 12px rgba(0,0,0,0.8);
     @include transition(all, .15s, linear);
     &:hover {
       opacity: 0.8;
@@ -182,7 +182,10 @@
   }
   #index #cta {
     margin-top: 45px;
-    padding: 212px 0 34px 0;
+    padding: 219px 0 34px 0;
+    h2 {
+      margin-bottom: 16px;
+    }
     #cta-img {
       height: 720px;
     }
