@@ -4,6 +4,16 @@
   position: relative;
 }
 
+#brigada-map-image {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-image: url("http://brigada.mx/assets/img/landing-map-fallback.png");
+  background-size: contain;
+}
+
 #brigada-legend {
   position: absolute;
   bottom: 26px;

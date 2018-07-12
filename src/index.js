@@ -150,9 +150,27 @@ const fmt = num => {
   return num.toLocaleString()
 }
 
+const getMap = () => {
+  try {
+    const map = new window.mapboxgl.Map({
+      container: 'brigada-map',
+      style: env.mapbox.style,
+      zoom: 6,
+      center: [-95.9042505, 17.1073688],
+    })
+    return map
+  } catch (e) {
+    const _wrapper = document.getElementById('brigada-map-wrapper')
+    _wrapper.innerHTML = `<div id="brigada-map-fallback">
+      <div id="brigada-map-image"></div>
+    </div>`
+    throw e
+  }
+}
+
 const renderMap = (localities) => {
   if (!window.mapboxgl) {
-    setTimeout(() => renderMap(localities), 2000)
+    setTimeout(() => renderMap(localities), 200)
     return
   }
 
@@ -160,13 +178,8 @@ const renderMap = (localities) => {
   const { results } = localities
 
   mapboxgl.accessToken = env.mapbox.accessToken
-  const map = new mapboxgl.Map({
-    container: 'brigada-map',
-    style: env.mapbox.style,
-    zoom: 6,
-    center: [-95.9042505, 17.1073688],
-  })
 
+  const map = getMap()
   map.scrollZoom.disable()
 
   // creates a popup, but doesn't add it to map yet
@@ -246,7 +259,7 @@ const renderMap = (localities) => {
       },
     })
 
-    map.addControl(new mapboxgl.NavigationControl(), 'top-right')
+    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-right')
 
     map.on('mousemove', 'damage', (e) => {
       // change the cursor style as a ui indicator
@@ -331,16 +344,7 @@ const render = (data) => {
   renderActions(actions)
   renderOpportunities(opportunities)
 
-  if (env.env === 'prod') {
-    try {
-      renderMap(localities) // if mapbox throws an exception, don't render map
-    } catch (e) {
-      const _map = document.getElementById('brigada-map')
-      _map.style.display = 'none'
-    }
-  } else {
-    renderMap(localities)
-  }
+  renderMap(localities)
 }
 
 const main = () => {
@@ -350,7 +354,12 @@ const main = () => {
     if (scrollIntoView(_cta, { behavior: 'smooth' })) e.preventDefault()
   }, false)
 
-  fetch(env.env === 'dev' ? 'http://localhost:8000/api/landing/' : 'http://brigada.mx/landing_data.json')
+  let url = 'http://brigada.mx/landing_data.json'
+  if (env.env === 'dev') {
+    if (/*@cc_on!@*/false || !!document.documentMode) url = 'http://10.0.2.2:8000/api/landing/' // IE VM
+    else url = 'http://localhost:8000/api/landing/'
+  }
+  fetch(url)
     .then(r => r.json())
     .catch(e => renderError(e))
     .then(data => render(data))
