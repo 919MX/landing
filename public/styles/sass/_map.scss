@@ -106,6 +106,10 @@
   padding-bottom: 1px;
 }
 
+.mapboxgl-canvas {
+  left: 0;
+}
+
 .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
   box-shadow: 0px 20px 60px 0px rgba(37, 38, 50, 0.15) !important;
   right: unset !important;
