@@ -6,7 +6,7 @@ set -e
 
 bucketname='brigada.mx'
 
-aws s3 cp public/bundle.js.gz s3://${bucketname}/bundle.js --acl public-read --content-encoding gzip
+aws s3 cp public/bundle.js.gz s3://${bucketname}/bundle.js --acl public-read --cache-control max-age=3600 --content-encoding gzip
 aws s3 cp public/index.html s3://${bucketname} --acl public-read
 aws s3 cp public/error.html s3://${bucketname} --acl public-read
 
