@@ -75,16 +75,14 @@ const renderActions = ({ results }) => {
     let labelText
     if (i === 1 && donations.length > 0) {
       const { donor: { name: donorName }, amount } = donations[0]
-      labelText = `<span class="card-title">${donorName}</span> invierte ${fmtBudget(amount)} en ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} para ${locName}, ${stateName}.`
+      labelText = `<span class="card-title">${donorName}</span>Invierte ${fmtBudget(amount)} en ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} para ${locName}, ${stateName}.`
     } else {
-      labelText = `<span class="card-title">${orgName}</span> Realiza ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} en ${locName}, ${stateName} por ${fmtBudget(budget)}.`
+      labelText = `<span class="card-title">${orgName}</span>Realiza ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} en ${locName}, ${stateName} por ${fmtBudget(budget)}.`
     }
 
     return `<div class="card-container">
       <a class="${type}" href="https://app.brigada.mx/proyectos/${id}${q}" style="background-image: url('${src}')"></a>
-      <div class="card-text">
-        ${labelText}
-      </div>
+      <a class="card-text" href="https://app.brigada.mx/proyectos/${id}">${labelText}</a>
     </div>`
   })
 
@@ -136,9 +134,9 @@ const renderOpportunities = ({ results }) => {
 
     return `<div class="card-container">
       <a class="${type}" href="https://app.brigada.mx/voluntariado/${id}${q}" style="background-image: url('${src}')"></a>
-      <div class="card-text">
+      <a class="card-text" href="https://app.brigada.mx/voluntariado/${id}">
         <span class="card-title">${orgName}</span> Busca ${target} ${target !== 1 ? pluralize(position.toLowerCase()) : position.toLowerCase()} en ${locName}, ${stateName}.
-      </div>
+      </a>
     </div>`
   })
 
