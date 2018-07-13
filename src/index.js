@@ -9,14 +9,14 @@ import env from 'src/env'
 const renderError = () => {}
 
 const renderMetrics = ({ groups, actions, total_spent: spent }) => {
-  const metricsStr = `Nos unimos para reconstruir México y para construir confianza. Acordamos trabajar de manera transparente. Somos ${groups} organizaciones gastando $${fmtSpent(spent)} millones de pesos en ${actions} proyectos de reconstrucción. Somos Brigada.`
+  const metricsStr = `Nos unimos para reconstruir México y para construir confianza. Acordamos trabajar de manera transparente. Somos ${groups} organizaciones gastando $${fmtSpent(spent)} millones de pesos en ${actions} proyectos de reconstrucción. Somos Brigada.`
   const _p = document.getElementById('brigada-metrics')
   _p.innerHTML = metricsStr
 }
 
 const renderMapHeader = ({ results }) => {
   const _h = document.getElementById('brigada-map-header')
-  _h.innerHTML = `Al dia de hoy, estamos en ${results.length} comunidades`
+  _h.innerHTML = `Al día de hoy, estamos en ${results.length} comunidades`
 }
 
 const renderActions = ({ results }) => {
