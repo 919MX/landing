@@ -143,3 +143,16 @@
   height: 36px !important;
   width: 31px !important;
 }
+
+// EXTRA SMALL
+@media screen and (max-width: 767px) and (min-width: 0px) {
+  #brigada-legend {
+    top: unset;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    @include box-shadow(0,0,100px,0,37,38,50,.10);
+    border-bottom: 5px solid #F6F8FA;
+    z-index: 5;
+  }
+}

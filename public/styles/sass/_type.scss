@@ -43,15 +43,18 @@ a.arrow {
   color: #3DC59F;
   letter-spacing: 0.4px;
   line-height: 16px;
+  display: block;
   @include transition(color, .15s, linear);
 }
 
 a.arrow:after {
   content: "";
   background: url(../assets/img/right-arrow.svg) no-repeat;
+  display: inline-block;
   width: 10px;
   height: 10px;
-  margin: 6px 0 0 5px;
+  background-position: bottom;
+  margin: 0 0 0 5px;
 }
 
 a.arrow:hover {
