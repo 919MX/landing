@@ -38,8 +38,11 @@
 
         <div class="col-lg-10 col-md-10 col-sm-7 col-xs-3">
           <ul class="nav">
-            <li><a href="/nosotros">Nosotros</a></li>
-            <li><a href="https://app.brigada.mx" class="button white">Entrar</a></li>
+            <li class="xs-hidden"><a href="https://app.brigada.mx">Comunidades</a></li>
+            <li><a href="https://app.brigada.mx/voluntarios">Voluntarios</a></li>
+            <li class="xs-hidden"><a href="https://app.brigada.mx/reconstructores">Reconstructores</a></li>
+            <li class="xs-hidden"><a href="https://app.brigada.mx/donadores">Donadores</a></li>
+            <li><a href="https://app.brigada.mx/" class="button white">Entrar</a></li>
           </ul>
         </div>
 
