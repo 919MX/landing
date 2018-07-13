@@ -151,11 +151,14 @@ const fmt = num => {
 }
 
 const getMap = () => {
+  let zoom = 6
+  if (window.innerWidth < 768) zoom = 5
+
   try {
     const map = new window.mapboxgl.Map({
       container: 'brigada-map',
       style: env.mapbox.style,
-      zoom: 6,
+      zoom,
       center: [-95.9042505, 17.1073688],
     })
     return map
