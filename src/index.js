@@ -160,6 +160,7 @@ const getMap = () => {
       style: env.mapbox.style,
       zoom,
       center: [-95.9042505, 17.1073688],
+      dragPan: window.innerWidth >= 980,
     })
     return map
   } catch (e) {
