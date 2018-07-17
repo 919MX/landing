@@ -1,4 +1,4 @@
-document.getElementById('supportLink').onclick = function (e) {
+document.getElementById('support-link').onclick = function (e) {
   e.preventDefault()
   window.__lc = window.__lc || {};
   window.__lc.license = 9592725;

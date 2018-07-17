@@ -1,10 +1,10 @@
 import 'babel-polyfill'
 import 'whatwg-fetch'
 
-import { fmtSpent, fmtBudget, scrollIntoView, dayOfYear, hash, rotatingHash } from 'src/tools'
-import { getLanguage } from 'src/language'
-import { localStorage } from 'src/storage'
-import pluralize from 'src/pluralize'
+import { fmtSpent, fmtBudget, scrollIntoView, dayOfYear, hash, rotatingHash } from 'tools/tools'
+import { getLanguage } from 'tools/language'
+import { localStorage } from 'tools/storage'
+import pluralize from 'tools/pluralize'
 import env from 'src/env'
 
 
@@ -385,10 +385,6 @@ const render = async (data, language = 'es') => {
   render._map = renderMap(localities, language)
 }
 
-const translate = (language) => {
-
-}
-
 const main = async () => {
   const _cta = document.getElementById('cta')
   const _joinButton = document.getElementById('join-button')
@@ -414,10 +410,12 @@ const main = async () => {
 
   let language = localStorage.getItem('brigada-language')
   render(data, language)
+  translate(language)
+
   if (!language) {
     language = await getLanguage()
     localStorage.setItem('brigada-language', language)
-    if (language !== 'es') {
+    if (language !== 'es') { // rerender only necessary if language not 'es'
       translate(language)
       render(data, language)
     }
@@ -434,20 +432,66 @@ const initializeLanguage = (language, data) => {
   if (language === 'en') _en.classList.add('language-selected')
 
   _es.addEventListener('click', () => {
+    const l = localStorage.getItem('brigada-language')
+    if (l === 'es') return
+
     localStorage.setItem('brigada-language', 'es')
-    _en.classList.remove('language-selected')
-    _es.classList.add('language-selected')
-    translate('es')
-    render(data, 'es')
+    window.location.href = '' // reload page instead of translating it
   }, false)
 
   _en.addEventListener('click', () => {
+    const l = localStorage.getItem('brigada-language')
+    if (l === 'en') return
+
     localStorage.setItem('brigada-language', 'en')
     _es.classList.remove('language-selected')
     _en.classList.add('language-selected')
     translate('en')
     render(data, 'en')
   }, false)
+}
+
+const translate = (language = 'es') => {
+  const t = (id, innerHTML) => {
+    const _el = document.getElementById(id)
+    _el.innerHTML = innerHTML
+  }
+
+  if (language === 'en') {
+    t('communities-nav', 'Communities')
+    t('volunteers-nav', 'Volunteers')
+    t('reconstructors-nav', 'Reconstructors')
+    t('donors-nav', 'Donors')
+    t('enter-nav', 'Enter')
+
+    t('rebuild-together', 'Rebuild together')
+
+    t('enter-top', 'Enter')
+    t('join-button', 'Join')
+
+    t('share-information', 'We share information to improve coordination')
+    t('share-information-sub', 'We publish our projects to avoid duplicating efforts.')
+    t('share-information-link', 'See projects')
+
+    t('map-sub', 'We focus on the most vulnerable and damaged communities.')
+    t('map-link', 'See all damaged communities')
+
+    t('brigada-legend-header', 'Level of damage')
+
+    t('vol-opps', 'By building trust we attract volunteers')
+    t('vol-opps-sub', 'We help our most transparent projects find volunteers.')
+    t('vol-opps-link', 'See volunteering opportunities')
+
+    t('join-bottom', 'Join Brigada')
+    t('join-bottom-sub', "We're an open network that depends on everyone's participation. The more groups and volunteers that join, the more transparently and effectively we can rebuild.")
+    t('join-organization', "We're an organization")
+    t('join-volunteer', "I'm a volunteer")
+
+    t('us-footer', 'Who we are')
+    t('support-link', 'Support')
+    t('privacy-footer', 'Privacy')
+    t('terms-footer', 'Terms of use')
+  }
 }
 
 document.addEventListener('DOMContentLoaded', main)

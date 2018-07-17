@@ -1,4 +1,4 @@
-import { localStorage } from 'src/storage'
+import { localStorage } from 'tools/storage'
 
 
 export const getLanguage = async () => {

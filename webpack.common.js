@@ -24,6 +24,7 @@ module.exports = {
   resolve: {
     alias: {
       src: path.resolve(__dirname, 'src'),
+      tools: path.resolve(__dirname, 'src/tools'),
       assets: path.resolve(__dirname, 'public/assets'),
     },
   },
