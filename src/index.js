@@ -388,8 +388,32 @@ const render = async (data, language) => {
 const main = async () => {
   const _cta = document.getElementById('cta')
   const _joinButton = document.getElementById('join-button')
+  const _es = document.getElementById('language-es')
+  const _en = document.getElementById('language-en')
+
+  _es.classList.add('language-selected')
+
   _joinButton.addEventListener('click', (e) => {
     if (scrollIntoView(_cta, { behavior: 'smooth' })) e.preventDefault()
+  }, false)
+
+  _es.addEventListener('click', () => {
+    const l = localStorage.getItem('brigada-language')
+    if (l === 'es') return
+
+    localStorage.setItem('brigada-language', 'es')
+    window.location.href = '' // reload page instead of translating it
+  }, false)
+
+  _en.addEventListener('click', () => {
+    const l = localStorage.getItem('brigada-language')
+    if (l === 'en') return
+
+    localStorage.setItem('brigada-language', 'en')
+    _es.classList.remove('language-selected')
+    _en.classList.add('language-selected')
+    translate('en')
+    render(data, 'en')
   }, false)
 
   let url = 'http://brigada.mx/landing_data.json'
@@ -412,43 +436,18 @@ const main = async () => {
   render(data, language)
   translate(language)
 
-  if (!language) {
-    language = await getLanguage()
-    localStorage.setItem('brigada-language', language)
-    if (language !== 'es') { // rerender only necessary if language not 'es'
-      translate(language)
-      render(data, language)
-    }
-  }
-
-  initializeLanguage(language, data)
-}
-
-const initializeLanguage = (language, data) => {
-  const _es = document.getElementById('language-es')
-  const _en = document.getElementById('language-en')
-
-  if (language === 'es') _es.classList.add('language-selected')
-  if (language === 'en') _en.classList.add('language-selected')
-
-  _es.addEventListener('click', () => {
-    const l = localStorage.getItem('brigada-language')
-    if (l === 'es') return
-
-    localStorage.setItem('brigada-language', 'es')
-    window.location.href = '' // reload page instead of translating it
-  }, false)
-
-  _en.addEventListener('click', () => {
-    const l = localStorage.getItem('brigada-language')
-    if (l === 'en') return
-
-    localStorage.setItem('brigada-language', 'en')
+  if (language === 'en') {
     _es.classList.remove('language-selected')
     _en.classList.add('language-selected')
-    translate('en')
-    render(data, 'en')
-  }, false)
+  }
+  if (language) return
+
+  language = await getLanguage()
+  localStorage.setItem('brigada-language', language)
+  if (language !== 'es') { // rerender only necessary if language not 'es'
+    translate(language)
+    render(data, language)
+  }
 }
 
 const translate = (language) => {
