@@ -2,24 +2,29 @@ import 'babel-polyfill'
 import 'whatwg-fetch'
 
 import { fmtSpent, fmtBudget, scrollIntoView, dayOfYear, hash, rotatingHash } from 'src/tools'
+import { getLanguage } from 'src/language'
+import { localStorage } from 'src/storage'
 import pluralize from 'src/pluralize'
 import env from 'src/env'
 
 
 const renderError = () => {}
 
-const renderMetrics = ({ groups, actions, total_spent: spent }) => {
-  const metricsStr = `Nos unimos para reconstruir México y para construir confianza. Acordamos trabajar de manera transparente. Somos ${groups} organizaciones invirtiendo $${fmtSpent(507329212 || spent)} millones de pesos en ${actions} proyectos de reconstrucción. Somos Brigada.`
+const renderMetrics = ({ groups, actions, total_spent: spent }, language) => {
+  let str = `Nos unimos para reconstruir México y para construir confianza. Acordamos trabajar de manera transparente. Somos ${groups} organizaciones invirtiendo $${fmtSpent(507329212 || spent)} millones de pesos en ${actions} proyectos de reconstrucción. Somos Brigada.`
+  if (language === 'en') str = `We came together to build trust and rebuild Mexico. We are ${groups} organizations spending $${fmtSpent(507329212 || spent)} million pesos on ${actions} reconstruction projects. We are Brigada.`
   const _p = document.getElementById('brigada-metrics')
-  _p.innerHTML = metricsStr
+  _p.innerHTML = str
 }
 
-const renderMapHeader = ({ results }) => {
+const renderMapHeader = ({ results }, language) => {
   const _h = document.getElementById('brigada-map-header')
-  _h.innerHTML = `Al día de hoy, estamos en ${results.length} comunidades`
+  let str = `Al día de hoy, estamos en ${results.length} comunidades`
+  if (language === 'en') str = `As of today we're working in ${results.length} communities`
+  _h.innerHTML = str
 }
 
-const renderActions = ({ results }) => {
+const renderActions = ({ results }, language) => {
   const _container = document.getElementById('brigada-actions')
 
   const firstThree = (items) => {
@@ -72,24 +77,26 @@ const renderActions = ({ results }) => {
     } = a
     const q = type === 'video' ? `?_mn=testimonial&_ms=${testimonialOrSubmissionId}` : ''
 
-    let labelText
+    let label
     if (i === 1 && donations.length > 0) {
       const { donor: { name: donorName }, amount } = donations[0]
-      labelText = `<span class="card-title">${donorName}</span>Invierte ${fmtBudget(amount)} en ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} para ${locName}, ${stateName}.`
+      label = `<span class="card-title">${donorName}</span>Invierte ${fmtBudget(amount)} en ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} para ${locName}, ${stateName}.`
+      if (language === 'en') label = `<span class="card-title">${donorName}</span>Donating ${fmtBudget(amount)} for ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} in ${locName}, ${stateName}.`
     } else {
-      labelText = `<span class="card-title">${orgName}</span>Realiza ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} en ${locName}, ${stateName} por ${fmtBudget(budget)}.`
+      label = `<span class="card-title">${orgName}</span>Realiza ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} en ${locName}, ${stateName} por ${fmtBudget(budget)}.`
+      if (language === 'en') label = `<span class="card-title">${orgName}</span>Completing ${target} ${target !== 1 ? pluralize(unit.toLowerCase()) : unit.toLowerCase()} in ${locName}, ${stateName} for ${fmtBudget(budget)}.`
     }
 
     return `<div class="card-container">
       <a class="${type}" href="https://app.brigada.mx/proyectos/${id}${q}" style="background-image: url('${src}')"></a>
-      <a class="card-text" href="https://app.brigada.mx/proyectos/${id}">${labelText}</a>
+      <a class="card-text" href="https://app.brigada.mx/proyectos/${id}">${label}</a>
     </div>`
   })
 
   _container.innerHTML = markup.join('')
 }
 
-const renderOpportunities = ({ results }) => {
+const renderOpportunities = ({ results }, language) => {
   const _container = document.getElementById('brigada-opportunities')
 
   const firstThree = (items) => {
@@ -132,10 +139,12 @@ const renderOpportunities = ({ results }) => {
     } = o
     const q = type === 'video' ? `?_mn=testimonial&_ms=${testimonialOrSubmissionId}` : ''
 
+    let label = `<span class="card-title">${orgName}</span> Busca ${target} ${target !== 1 ? pluralize(position.toLowerCase()) : position.toLowerCase()} en ${locName}, ${stateName}.`
+    if (language === 'en') label = `<span class="card-title">${orgName}</span> Looking for ${target} ${target !== 1 ? pluralize(position.toLowerCase()) : position.toLowerCase()} in ${locName}, ${stateName}.`
     return `<div class="card-container">
       <a class="${type}" href="https://app.brigada.mx/voluntariado/${id}${q}" style="background-image: url('${src}')"></a>
       <a class="card-text" href="https://app.brigada.mx/voluntariado/${id}">
-        <span class="card-title">${orgName}</span> Busca ${target} ${target !== 1 ? pluralize(position.toLowerCase()) : position.toLowerCase()} en ${locName}, ${stateName}.
+        ${label}
       </a>
     </div>`
   })
@@ -170,7 +179,7 @@ const getMap = () => {
   }
 }
 
-const renderMap = (localities) => {
+const renderMap = (localities, language) => {
   if (!window.mapboxgl) {
     setTimeout(() => renderMap(localities), 200)
     return
@@ -287,10 +296,10 @@ const renderMap = (localities) => {
     const {
       name,
       state_name: stateName,
-      meta: { habit, notHabit, destroyed, margGrade, total },
+      meta: { habit, notHabit, destroyed, margGrade = 'Desconocido', total },
     } = locality
 
-    const markup = `
+    let markup = `
       <span class="popup-header">${name}, ${stateName}</span>
       <div class="popup-item"><span>Viviendas dañadas</span> <span>${fmt(total)}</span></div>
       <div class="popup-item"><span>Habitables</span> <span>${fmt(habit)}</span></div>
@@ -298,19 +307,45 @@ const renderMap = (localities) => {
       <div class="popup-item"><span>Pérdida total</span> <span>${fmt(destroyed)}</span></div>
       <div class="popup-item"><span>Grado de marginación</span> <span>${margGrade}</span></div>
     `
+
+    const margGradeTranslated = {
+      'desconocido': 'Unknown',
+      'muy bajo': 'Very low',
+      'bajo': 'Low',
+      'medio': 'Medium',
+      'alto': 'High',
+      'muy alto': 'Very high',
+    }[(margGrade || '').toLowerCase()] || margGrade
+
+    if (language === 'en') markup = `
+      <span class="popup-header">${name}, ${stateName}</span>
+      <div class="popup-item"><span>Damaged houses</span> <span>${fmt(total)}</span></div>
+      <div class="popup-item"><span>Habitable</span> <span>${fmt(habit)}</span></div>
+      <div class="popup-item"><span>Inhabitable</span> <span>${fmt(notHabit)}</span></div>
+      <div class="popup-item"><span>Totally destroyed</span> <span>${fmt(destroyed)}</span></div>
+      <div class="popup-item"><span>Social exclusion</span> <span>${margGradeTranslated}</span></div>
+    `
     popup.setLngLat(feature.geometry.coordinates).setHTML(markup).addTo(map)
   }
 
-  renderLegend(features)
+  renderLegend(features, language)
+  return map
 }
 
-const renderLegend = (features) => {
-  const metaByDmgGrade = {
+const renderLegend = (features, language) => {
+  let metaByDmgGrade = {
     unknown: {label: 'SIN DATOS', color: '#939AA1'},
     low: {label: 'MENOR', color: '#eedd00'},
     medium: {label: 'MEDIO', color: '#ddaa00'},
     high: {label: 'GRAVE', color: '#dd6600'},
     severe: {label: 'MUY GRAVE', color: '#ff0000'},
+  }
+  if (language === 'en') metaByDmgGrade = {
+    unknown: {label: 'NO DATA', color: '#939AA1'},
+    low: {label: 'MINOR', color: '#eedd00'},
+    medium: {label: 'MEDIUM', color: '#ddaa00'},
+    high: {label: 'SEVERE', color: '#dd6600'},
+    severe: {label: 'VERY SEVERE', color: '#ff0000'},
   }
 
   const _legend = document.getElementById('brigada-legend-items')
@@ -338,18 +373,23 @@ const renderLegend = (features) => {
   _legend.innerHTML = markup.join('\n')
 }
 
-const render = (data) => {
+const render = async (data, language = 'es') => {
   const { metrics, actions, opportunities, localities } = data
-  renderMetrics(metrics)
-  renderMapHeader(localities)
+  renderMetrics(metrics, language)
+  renderMapHeader(localities, language)
 
-  renderActions(actions)
-  renderOpportunities(opportunities)
+  renderActions(actions, language)
+  renderOpportunities(opportunities, language)
 
-  renderMap(localities)
+  if (render._map) render._map.remove()
+  render._map = renderMap(localities, language)
 }
 
-const main = () => {
+const translate = (language) => {
+
+}
+
+const main = async () => {
   const _cta = document.getElementById('cta')
   const _joinButton = document.getElementById('join-button')
   _joinButton.addEventListener('click', (e) => {
@@ -361,10 +401,53 @@ const main = () => {
     if (/*@cc_on!@*/false || !!document.documentMode) url = 'http://10.0.2.2:8000/api/landing/' // IE VM
     else url = 'http://localhost:8000/api/landing/'
   }
-  fetch(url)
-    .then(r => r.json())
-    .catch(e => renderError(e))
-    .then(data => render(data))
+
+  let data
+  try {
+    const r = await fetch(url)
+    data = await r.json()
+  } catch (e) {
+    renderError(e)
+  } finally {
+    if (!data) return
+  }
+
+  let language = localStorage.getItem('brigada-language')
+  render(data, language)
+  if (!language) {
+    language = await getLanguage()
+    localStorage.setItem('brigada-language', language)
+    if (language !== 'es') {
+      translate(language)
+      render(data, language)
+    }
+  }
+
+  initializeLanguage(language, data)
+}
+
+const initializeLanguage = (language, data) => {
+  const _es = document.getElementById('language-es')
+  const _en = document.getElementById('language-en')
+
+  if (language === 'es') _es.classList.add('language-selected')
+  if (language === 'en') _en.classList.add('language-selected')
+
+  _es.addEventListener('click', () => {
+    localStorage.setItem('brigada-language', 'es')
+    _en.classList.remove('language-selected')
+    _es.classList.add('language-selected')
+    translate('es')
+    render(data, 'es')
+  }, false)
+
+  _en.addEventListener('click', () => {
+    localStorage.setItem('brigada-language', 'en')
+    _es.classList.remove('language-selected')
+    _en.classList.add('language-selected')
+    translate('en')
+    render(data, 'en')
+  }, false)
 }
 
 document.addEventListener('DOMContentLoaded', main)
