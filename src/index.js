@@ -12,7 +12,7 @@ const renderError = () => {}
 
 const renderMetrics = ({ groups, actions, total_spent: spent }, language) => {
   let str = `Nos unimos para reconstruir México y para construir confianza. Acordamos trabajar de manera transparente. Somos ${groups} organizaciones invirtiendo $${fmtSpent(507329212 || spent)} millones de pesos en ${actions} proyectos de reconstrucción. Somos Brigada.`
-  if (language === 'en') str = `We came together to rebuild Mexico and to build trust in the process. We are ${groups} organizations spending $${fmtSpent(507329212 || spent)} million pesos on ${actions} reconstruction projects. We are Brigada.`
+  if (language === 'en') str = `We came together to rebuild Mexico and to build trust with the public. We are ${groups} organizations spending $${fmtSpent(507329212 || spent)} million pesos on ${actions} reconstruction projects. We are Brigada.`
   const _p = document.getElementById('brigada-metrics')
   _p.innerHTML = str
 }
@@ -418,7 +418,7 @@ const main = async () => {
 
   let url = 'http://brigada.mx/landing_data.json'
   if (env.env === 'dev') {
-    if (/*@cc_on!@*/false || !!document.documentMode) url = 'http://10.0.2.2:8000/api/landing/' // IE VM
+    if (/*@cc_on!@*/false || !!document.documentMode) url = 'http://10.0.2.2:8000/api/landing/' // internet explorer VM
     else url = 'http://localhost:8000/api/landing/'
   }
 
