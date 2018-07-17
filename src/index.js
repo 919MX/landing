@@ -373,7 +373,7 @@ const renderLegend = (features, language) => {
   _legend.innerHTML = markup.join('\n')
 }
 
-const render = async (data, language = 'es') => {
+const render = async (data, language) => {
   const { metrics, actions, opportunities, localities } = data
   renderMetrics(metrics, language)
   renderMapHeader(localities, language)
@@ -451,10 +451,13 @@ const initializeLanguage = (language, data) => {
   }, false)
 }
 
-const translate = (language = 'es') => {
+const translate = (language) => {
   const t = (id, innerHTML) => {
     const _el = document.getElementById(id)
-    _el.innerHTML = innerHTML
+    if (_el) _el.innerHTML = innerHTML
+    else if (env.env !== 'prod') {
+      console.warn(`no element with id ${id}`)
+    }
   }
 
   if (language === 'en') {
