@@ -12,7 +12,7 @@ const renderError = () => {}
 
 const renderMetrics = ({ groups, actions, total_spent: spent }, language) => {
   let str = `Nos unimos para reconstruir México y para construir confianza. Acordamos trabajar de manera transparente. Somos ${groups} organizaciones invirtiendo $${fmtSpent(507329212 || spent)} millones de pesos en ${actions} proyectos de reconstrucción. Somos Brigada.`
-  if (language === 'en') str = `We came together to build trust and rebuild Mexico. We are ${groups} organizations spending $${fmtSpent(507329212 || spent)} million pesos on ${actions} reconstruction projects. We are Brigada.`
+  if (language === 'en') str = `We came together to rebuild Mexico and to build trust in the process. We are ${groups} organizations spending $${fmtSpent(507329212 || spent)} million pesos on ${actions} reconstruction projects. We are Brigada.`
   const _p = document.getElementById('brigada-metrics')
   _p.innerHTML = str
 }
@@ -20,7 +20,7 @@ const renderMetrics = ({ groups, actions, total_spent: spent }, language) => {
 const renderMapHeader = ({ results }, language) => {
   const _h = document.getElementById('brigada-map-header')
   let str = `Al día de hoy, estamos en ${results.length} comunidades`
-  if (language === 'en') str = `As of today we're working in ${results.length} communities`
+  if (language === 'en') str = `As of today, we're working in ${results.length} communities`
   _h.innerHTML = str
 }
 
@@ -466,33 +466,33 @@ const translate = (language) => {
     t('donors-nav', 'Donors')
     t('enter-nav', 'Enter')
 
-    t('rebuild-together', 'Rebuild together')
+    t('rebuild-together', "Let's Rebuild Together")
 
     t('enter-top', 'Enter')
-    t('join-button', 'Join')
+    t('join-button', 'Join Us')
 
-    t('share-information', 'We share information to improve coordination')
+    t('share-information', 'By sharing information, we strengthen collaboration')
     t('share-information-sub', 'We publish our projects to avoid duplicating efforts.')
     t('share-information-link', 'See projects')
 
-    t('map-sub', 'We focus on the most vulnerable and damaged communities.')
+    t('map-sub', 'We focus on communities with high levels of damage and poverty.')
     t('map-link', 'See all damaged communities')
 
     t('brigada-legend-header', 'Level of damage')
 
-    t('vol-opps', 'By building trust we attract volunteers')
-    t('vol-opps-sub', 'We help our most transparent projects find volunteers.')
+    t('vol-opps', 'By building trust, we attract volunteers')
+    t('vol-opps-sub', 'We connect our most transparent organizations with skilled volunteers.')
     t('vol-opps-link', 'See volunteering opportunities')
 
     t('join-bottom', 'Join Brigada')
-    t('join-bottom-sub', "We're an open network that depends on everyone's participation. The more groups and volunteers that join, the more transparently and effectively we can rebuild.")
+    t('join-bottom-sub', "We're an open network that depends on everyone's participation. The more groups and volunteers that join us, the more transparently and effectively we can rebuild Mexico.")
     t('join-organization', "We're an organization")
     t('join-volunteer', "I'm a volunteer")
 
-    t('us-footer', 'Who we are')
+    t('us-footer', 'About Us')
     t('support-link', 'Support')
     t('privacy-footer', 'Privacy')
-    t('terms-footer', 'Terms of use')
+    t('terms-footer', 'Terms of Use')
   }
 }
 
