@@ -11,8 +11,8 @@ import env from 'src/env'
 const renderError = () => {}
 
 const renderMetrics = ({ groups, actions, total_spent: spent }, language) => {
-  let str = `Nos unimos para reconstruir México y para construir confianza. Acordamos trabajar de manera transparente. Somos ${groups} organizaciones invirtiendo $${fmtSpent(507329212 || spent)} millones de pesos en ${actions} proyectos de reconstrucción. Somos Brigada.`
-  if (language === 'en') str = `We came together to rebuild Mexico and to build trust with the public. We are ${groups} organizations spending $${fmtSpent(507329212 || spent)} million pesos on ${actions} reconstruction projects. We are Brigada.`
+  let str = `Nos unimos para reconstruir México y para construir confianza. Acordamos trabajar de manera transparente. Somos ${groups} organizaciones invirtiendo $${fmtSpent(spent)} millones de pesos en ${actions} proyectos de reconstrucción. Somos Brigada.`
+  if (language === 'en') str = `We came together to rebuild Mexico and to build trust with the public. We are ${groups} organizations spending $${fmtSpent(spent)} million pesos on ${actions} reconstruction projects. We are Brigada.`
   const _p = document.getElementById('brigada-metrics')
   _p.innerHTML = str
 }
